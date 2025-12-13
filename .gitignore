@@ -1,0 +1,8 @@
+/build/
+/log/
+/install/
+.vscode/
+
+/home/pandora/robot/ros2_pro/log
+/home/pandora/robot/ros2_pro/install
+/home/pandora/robot/ros2_pro/build

@@ -119,10 +119,10 @@ class PalletizingNode(Node):
         d = request.direction
         target = self.POSE_HOME # Default
 
-        if d == RotateTurret.LEFT:
+        if d == RotateTurret.Request.LEFT:
             target = self.POSE_LOOK_LEFT
             lbl = "LEFT"
-        elif d == RotateTurret.RIGHT:
+        elif d == RotateTurret.Request.RIGHT:
             target = self.POSE_LOOK_RIGHT
             lbl = "RIGHT"
         else: # Forward
