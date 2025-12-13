@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from mmr_interfaces/srv/MoveDistance.srv
+// generated code does not contain a copyright notice
+
+
+module mmr_interfaces {
+  module srv {
+    struct MoveDistance_Request {
+      double distance;
+    };
+    struct MoveDistance_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

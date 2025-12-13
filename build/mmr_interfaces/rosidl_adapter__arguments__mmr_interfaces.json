@@ -1,0 +1,11 @@
+{
+  "package_name": "mmr_interfaces",
+  "non_idl_tuples": [
+    "/home/pandora/robot/ros2_pro/src/mmr_interfaces:srv/MoveDistance.srv",
+    "/home/pandora/robot/ros2_pro/src/mmr_interfaces:srv/CaptureVision.srv",
+    "/home/pandora/robot/ros2_pro/src/mmr_interfaces:srv/GetDropPose.srv",
+    "/home/pandora/robot/ros2_pro/src/mmr_interfaces:srv/RotateTurret.srv",
+    "/home/pandora/robot/ros2_pro/src/mmr_interfaces:action/Palletize.action",
+    "/home/pandora/robot/ros2_pro/src/mmr_interfaces:action/PickAndPlace.action"
+  ]
+}

@@ -1,0 +1,3 @@
+[console_scripts]
+palletizing_node = kinetic.palletizing_node:main
+

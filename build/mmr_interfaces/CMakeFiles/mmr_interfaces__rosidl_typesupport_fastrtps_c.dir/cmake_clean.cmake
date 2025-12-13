@@ -1,0 +1,33 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/capture_vision__type_support_c.cpp.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/capture_vision__type_support_c.cpp.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.cpp.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.cpp.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.cpp.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.cpp.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__type_support_c.cpp.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__type_support_c.cpp.o.d"
+  "libmmr_interfaces__rosidl_typesupport_fastrtps_c.pdb"
+  "libmmr_interfaces__rosidl_typesupport_fastrtps_c.so"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/capture_vision__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/capture_vision__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__type_support_c.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

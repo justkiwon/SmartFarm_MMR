@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from mmr_interfaces/action/PickAndPlace.action
+// generated code does not contain a copyright notice
+
+
+module mmr_interfaces {
+  module action {
+    @verbatim (language="comment", text=
+      "Goal")
+    struct PickAndPlace_Goal {
+      @verbatim (language="comment", text=
+        "x, y, z")
+      sequence<double> pick_pose;
+
+      @verbatim (language="comment", text=
+        "x, y, z")
+      sequence<double> place_pose;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct PickAndPlace_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct PickAndPlace_Feedback {
+      float progress;
+
+      string status;
+    };
+  };
+};

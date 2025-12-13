@@ -1,0 +1,363 @@
+[0.180s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.180s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffffb7e6d7e0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffb7e6ce20>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffb7e6ce20>>, mixin_verb=('build',))
+[0.444s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.444s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.445s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.445s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.445s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.445s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.445s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/pandora/robot/ros2_pro'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.463s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.463s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.464s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.464s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.464s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.464s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.464s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.464s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.464s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.465s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.465s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.465s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.465s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.465s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.465s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.465s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/amr_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/amr_controller) by extension 'ignore'
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/amr_controller) by extension 'ignore_ament_install'
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/amr_controller) by extensions ['colcon_pkg']
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/amr_controller) by extension 'colcon_pkg'
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/amr_controller) by extensions ['colcon_meta']
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/amr_controller) by extension 'colcon_meta'
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/amr_controller) by extensions ['ros']
+[0.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/amr_controller) by extension 'ros'
+[0.471s] DEBUG:colcon.colcon_core.package_identification:Package 'src/amr_controller' with type 'ros.ament_python' and name 'amr_controller'
+[0.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/kinetic) by extensions ['ignore', 'ignore_ament_install']
+[0.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/kinetic) by extension 'ignore'
+[0.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/kinetic) by extension 'ignore_ament_install'
+[0.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/kinetic) by extensions ['colcon_pkg']
+[0.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/kinetic) by extension 'colcon_pkg'
+[0.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/kinetic) by extensions ['colcon_meta']
+[0.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/kinetic) by extension 'colcon_meta'
+[0.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/kinetic) by extensions ['ros']
+[0.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/kinetic) by extension 'ros'
+[0.473s] DEBUG:colcon.colcon_core.package_identification:Package 'src/kinetic' with type 'ros.ament_python' and name 'kinetic'
+[0.473s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_interfaces) by extension 'ignore'
+[0.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_interfaces) by extension 'ignore_ament_install'
+[0.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_interfaces) by extensions ['colcon_pkg']
+[0.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_interfaces) by extension 'colcon_pkg'
+[0.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_interfaces) by extensions ['colcon_meta']
+[0.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_interfaces) by extension 'colcon_meta'
+[0.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_interfaces) by extensions ['ros']
+[0.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_interfaces) by extension 'ros'
+[0.475s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mmr_interfaces' with type 'ros.catkin' and name 'mmr_interfaces'
+[0.475s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_orchestrator) by extensions ['ignore', 'ignore_ament_install']
+[0.475s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_orchestrator) by extension 'ignore'
+[0.475s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_orchestrator) by extension 'ignore_ament_install'
+[0.475s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_orchestrator) by extensions ['colcon_pkg']
+[0.476s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_orchestrator) by extension 'colcon_pkg'
+[0.476s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_orchestrator) by extensions ['colcon_meta']
+[0.476s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_orchestrator) by extension 'colcon_meta'
+[0.476s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_orchestrator) by extensions ['ros']
+[0.476s] Level 1:colcon.colcon_core.package_identification:_identify(src/mmr_orchestrator) by extension 'ros'
+[0.477s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mmr_orchestrator' with type 'ros.ament_python' and name 'mmr_orchestrator'
+[0.477s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision) by extensions ['ignore', 'ignore_ament_install']
+[0.477s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision) by extension 'ignore'
+[0.477s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision) by extension 'ignore_ament_install'
+[0.477s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision) by extensions ['colcon_pkg']
+[0.477s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision) by extension 'colcon_pkg'
+[0.477s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision) by extensions ['colcon_meta']
+[0.477s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision) by extension 'colcon_meta'
+[0.477s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision) by extensions ['ros']
+[0.477s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision) by extension 'ros'
+[0.478s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vision' with type 'ros.ament_python' and name 'vision'
+[0.478s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.478s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.478s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.478s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.479s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.542s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.542s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.546s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 271 installed packages in /opt/ros/humble
+[0.548s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mmr_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.608s] Level 5:colcon.colcon_core.verb:set package 'mmr_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.608s] Level 5:colcon.colcon_core.verb:set package 'mmr_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.608s] Level 5:colcon.colcon_core.verb:set package 'mmr_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.608s] Level 5:colcon.colcon_core.verb:set package 'mmr_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.608s] Level 5:colcon.colcon_core.verb:set package 'mmr_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.608s] Level 5:colcon.colcon_core.verb:set package 'mmr_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.608s] Level 5:colcon.colcon_core.verb:set package 'mmr_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.608s] Level 5:colcon.colcon_core.verb:set package 'mmr_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.608s] DEBUG:colcon.colcon_core.verb:Building package 'mmr_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/pandora/robot/ros2_pro/build/mmr_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/pandora/robot/ros2_pro/install/mmr_interfaces', 'merge_install': False, 'path': '/home/pandora/robot/ros2_pro/src/mmr_interfaces', 'symlink_install': True, 'test_result_base': None}
+[0.609s] Level 5:colcon.colcon_core.verb:set package 'amr_controller' build argument 'cmake_args' from command line to 'None'
+[0.609s] Level 5:colcon.colcon_core.verb:set package 'amr_controller' build argument 'cmake_target' from command line to 'None'
+[0.609s] Level 5:colcon.colcon_core.verb:set package 'amr_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.609s] Level 5:colcon.colcon_core.verb:set package 'amr_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.609s] Level 5:colcon.colcon_core.verb:set package 'amr_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.609s] Level 5:colcon.colcon_core.verb:set package 'amr_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.609s] Level 5:colcon.colcon_core.verb:set package 'amr_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.609s] Level 5:colcon.colcon_core.verb:set package 'amr_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.609s] Level 5:colcon.colcon_core.verb:set package 'amr_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.609s] DEBUG:colcon.colcon_core.verb:Building package 'amr_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/pandora/robot/ros2_pro/build/amr_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/pandora/robot/ros2_pro/install/amr_controller', 'merge_install': False, 'path': '/home/pandora/robot/ros2_pro/src/amr_controller', 'symlink_install': True, 'test_result_base': None}
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'kinetic' build argument 'cmake_args' from command line to 'None'
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'kinetic' build argument 'cmake_target' from command line to 'None'
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'kinetic' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'kinetic' build argument 'cmake_clean_cache' from command line to 'False'
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'kinetic' build argument 'cmake_clean_first' from command line to 'False'
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'kinetic' build argument 'cmake_force_configure' from command line to 'False'
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'kinetic' build argument 'ament_cmake_args' from command line to 'None'
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'kinetic' build argument 'catkin_cmake_args' from command line to 'None'
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'kinetic' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.610s] DEBUG:colcon.colcon_core.verb:Building package 'kinetic' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/pandora/robot/ros2_pro/build/kinetic', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/pandora/robot/ros2_pro/install/kinetic', 'merge_install': False, 'path': '/home/pandora/robot/ros2_pro/src/kinetic', 'symlink_install': True, 'test_result_base': None}
+[0.610s] Level 5:colcon.colcon_core.verb:set package 'mmr_orchestrator' build argument 'cmake_args' from command line to 'None'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'mmr_orchestrator' build argument 'cmake_target' from command line to 'None'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'mmr_orchestrator' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'mmr_orchestrator' build argument 'cmake_clean_cache' from command line to 'False'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'mmr_orchestrator' build argument 'cmake_clean_first' from command line to 'False'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'mmr_orchestrator' build argument 'cmake_force_configure' from command line to 'False'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'mmr_orchestrator' build argument 'ament_cmake_args' from command line to 'None'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'mmr_orchestrator' build argument 'catkin_cmake_args' from command line to 'None'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'mmr_orchestrator' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.611s] DEBUG:colcon.colcon_core.verb:Building package 'mmr_orchestrator' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/pandora/robot/ros2_pro/build/mmr_orchestrator', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/pandora/robot/ros2_pro/install/mmr_orchestrator', 'merge_install': False, 'path': '/home/pandora/robot/ros2_pro/src/mmr_orchestrator', 'symlink_install': True, 'test_result_base': None}
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_args' from command line to 'None'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_target' from command line to 'None'
+[0.611s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.612s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_clean_cache' from command line to 'False'
+[0.612s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_clean_first' from command line to 'False'
+[0.612s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_force_configure' from command line to 'False'
+[0.612s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'ament_cmake_args' from command line to 'None'
+[0.612s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'catkin_cmake_args' from command line to 'None'
+[0.612s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.612s] DEBUG:colcon.colcon_core.verb:Building package 'vision' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/pandora/robot/ros2_pro/build/vision', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/pandora/robot/ros2_pro/install/vision', 'merge_install': False, 'path': '/home/pandora/robot/ros2_pro/src/vision', 'symlink_install': True, 'test_result_base': None}
+[0.612s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.614s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.614s] INFO:colcon.colcon_ros.task.catkin.build:Building ROS package in '/home/pandora/robot/ros2_pro/src/mmr_interfaces' with build type 'catkin'
+[0.615s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/pandora/robot/ros2_pro/src/mmr_interfaces'
+[0.618s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.619s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.619s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.632s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/pandora/robot/ros2_pro/build/mmr_interfaces': PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/cmake --build /home/pandora/robot/ros2_pro/build/mmr_interfaces -- -j8 -l8
+[1.178s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/pandora/robot/ros2_pro/build/mmr_interfaces' returned '0': PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/cmake --build /home/pandora/robot/ros2_pro/build/mmr_interfaces -- -j8 -l8
+[1.200s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/pandora/robot/ros2_pro/build/mmr_interfaces': PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/cmake --install /home/pandora/robot/ros2_pro/build/mmr_interfaces
+[1.297s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_interfaces', 'ros_package_path')
+[1.297s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/ros_package_path.ps1'
+[1.300s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/ros_package_path.dsv'
+[1.302s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/pandora/robot/ros2_pro/build/mmr_interfaces' returned '0': PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/cmake --install /home/pandora/robot/ros2_pro/build/mmr_interfaces
+[1.302s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/ros_package_path.sh'
+[1.304s] Level 1:colcon.colcon_ros.task.catkin:checking '/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages'
+[1.305s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_interfaces', 'catkin_pythonpath')
+[1.305s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/catkin_pythonpath.ps1'
+[1.306s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/catkin_pythonpath.dsv'
+[1.307s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/catkin_pythonpath.sh'
+[1.308s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_interfaces', 'pkg_config_path')
+[1.308s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/pkg_config_path.ps1'
+[1.309s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/pkg_config_path.dsv'
+[1.310s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/pkg_config_path.sh'
+[1.314s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_interfaces', 'pkg_config_path_multiarch')
+[1.314s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/pkg_config_path_multiarch.ps1'
+[1.316s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/pkg_config_path_multiarch.dsv'
+[1.317s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/pkg_config_path_multiarch.sh'
+[1.319s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mmr_interfaces)
+[1.324s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_interfaces' for CMake module files
+[1.325s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_interfaces' for CMake config files
+[1.327s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_interfaces', 'cmake_prefix_path')
+[1.328s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/cmake_prefix_path.ps1'
+[1.329s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/cmake_prefix_path.dsv'
+[1.331s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/cmake_prefix_path.sh'
+[1.332s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib'
+[1.333s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_interfaces', 'ld_library_path_lib')
+[1.333s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/ld_library_path_lib.ps1'
+[1.334s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/ld_library_path_lib.dsv'
+[1.335s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/ld_library_path_lib.sh'
+[1.335s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_interfaces/bin'
+[1.336s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig/mmr_interfaces.pc'
+[1.336s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages'
+[1.336s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_interfaces', 'pythonpath')
+[1.336s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/pythonpath.ps1'
+[1.337s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/pythonpath.dsv'
+[1.338s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/hook/pythonpath.sh'
+[1.339s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_interfaces/bin'
+[1.341s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/package.ps1'
+[1.344s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/package.dsv'
+[1.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/package.sh'
+[1.349s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/package.bash'
+[1.351s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/mmr_interfaces/package.zsh'
+[1.352s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/pandora/robot/ros2_pro/install/mmr_interfaces/share/colcon-core/packages/mmr_interfaces)
+[1.353s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/pandora/robot/ros2_pro/src/amr_controller' with build type 'ament_python'
+[1.354s] Level 1:colcon.colcon_core.shell:create_environment_hook('amr_controller', 'ament_prefix_path')
+[1.355s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/hook/ament_prefix_path.ps1'
+[1.356s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/hook/ament_prefix_path.dsv'
+[1.357s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/hook/ament_prefix_path.sh'
+[1.358s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.358s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.362s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/pandora/robot/ros2_pro/src/kinetic' with build type 'ament_python'
+[1.362s] Level 1:colcon.colcon_core.shell:create_environment_hook('kinetic', 'ament_prefix_path')
+[1.363s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/hook/ament_prefix_path.ps1'
+[1.364s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/hook/ament_prefix_path.dsv'
+[1.365s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/hook/ament_prefix_path.sh'
+[1.366s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.366s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.371s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/pandora/robot/ros2_pro/src/mmr_orchestrator' with build type 'ament_python'
+[1.371s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_orchestrator', 'ament_prefix_path')
+[1.372s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/hook/ament_prefix_path.ps1'
+[1.373s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/hook/ament_prefix_path.dsv'
+[1.373s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/hook/ament_prefix_path.sh'
+[1.374s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.374s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.378s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/pandora/robot/ros2_pro/src/vision' with build type 'ament_python'
+[1.379s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision', 'ament_prefix_path')
+[1.379s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/vision/share/vision/hook/ament_prefix_path.ps1'
+[1.380s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/vision/share/vision/hook/ament_prefix_path.dsv'
+[1.380s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/vision/share/vision/hook/ament_prefix_path.sh'
+[1.381s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.381s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.824s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/pandora/robot/ros2_pro/src/amr_controller'
+[1.825s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.825s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.256s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/pandora/robot/ros2_pro/src/kinetic'
+[2.257s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.257s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.701s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/pandora/robot/ros2_pro/src/mmr_orchestrator'
+[2.702s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.702s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.146s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/pandora/robot/ros2_pro/src/vision'
+[3.146s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.147s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.820s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/pandora/robot/ros2_pro/build/amr_controller': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/amr_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/amr_controller/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/amr_controller/build --no-deps symlink_data
+[3.826s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/pandora/robot/ros2_pro/build/mmr_orchestrator': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/mmr_orchestrator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/mmr_orchestrator/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/mmr_orchestrator/build --no-deps symlink_data
+[3.830s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/pandora/robot/ros2_pro/build/vision': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/vision/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/vision/build --no-deps symlink_data
+[3.833s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/pandora/robot/ros2_pro/build/kinetic': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/kinetic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/kinetic/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/kinetic/build --no-deps symlink_data
+[4.631s] Level 1:colcon.colcon_core.shell:create_environment_hook('amr_controller', 'pythonpath_develop')
+[4.632s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/build/amr_controller/share/amr_controller/hook/pythonpath_develop.ps1'
+[4.633s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/pandora/robot/ros2_pro/build/amr_controller' returned '0': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/amr_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/amr_controller/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/amr_controller/build --no-deps symlink_data
+[4.634s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/build/amr_controller/share/amr_controller/hook/pythonpath_develop.dsv'
+[4.635s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/build/amr_controller/share/amr_controller/hook/pythonpath_develop.sh'
+[4.636s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/amr_controller' for CMake module files
+[4.637s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/amr_controller' for CMake config files
+[4.639s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/amr_controller/lib'
+[4.639s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/amr_controller/bin'
+[4.639s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/amr_controller/lib/pkgconfig/amr_controller.pc'
+[4.639s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/amr_controller/lib/python3.10/site-packages'
+[4.639s] Level 1:colcon.colcon_core.shell:create_environment_hook('amr_controller', 'pythonpath')
+[4.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/hook/pythonpath.ps1'
+[4.641s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/hook/pythonpath.dsv'
+[4.642s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/hook/pythonpath.sh'
+[4.643s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/amr_controller/bin'
+[4.643s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(amr_controller)
+[4.644s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/package.ps1'
+[4.646s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/package.dsv'
+[4.647s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/package.sh'
+[4.648s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/package.bash'
+[4.649s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller/package.zsh'
+[4.650s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/pandora/robot/ros2_pro/install/amr_controller/share/colcon-core/packages/amr_controller)
+[4.652s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_orchestrator', 'pythonpath_develop')
+[4.653s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/build/mmr_orchestrator/share/mmr_orchestrator/hook/pythonpath_develop.ps1'
+[4.655s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/pandora/robot/ros2_pro/build/mmr_orchestrator' returned '0': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/mmr_orchestrator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/mmr_orchestrator/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/mmr_orchestrator/build --no-deps symlink_data
+[4.655s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/build/mmr_orchestrator/share/mmr_orchestrator/hook/pythonpath_develop.dsv'
+[4.656s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/build/mmr_orchestrator/share/mmr_orchestrator/hook/pythonpath_develop.sh'
+[4.658s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_orchestrator' for CMake module files
+[4.659s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_orchestrator' for CMake config files
+[4.660s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/lib'
+[4.660s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/bin'
+[4.661s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/lib/pkgconfig/mmr_orchestrator.pc'
+[4.661s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/lib/python3.10/site-packages'
+[4.661s] Level 1:colcon.colcon_core.shell:create_environment_hook('mmr_orchestrator', 'pythonpath')
+[4.662s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/hook/pythonpath.ps1'
+[4.663s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/hook/pythonpath.dsv'
+[4.664s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/hook/pythonpath.sh'
+[4.665s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/bin'
+[4.665s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mmr_orchestrator)
+[4.666s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/package.ps1'
+[4.668s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/package.dsv'
+[4.670s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/package.sh'
+[4.671s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/package.bash'
+[4.673s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/package.zsh'
+[4.674s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/colcon-core/packages/mmr_orchestrator)
+[4.677s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision', 'pythonpath_develop')
+[4.677s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/build/vision/share/vision/hook/pythonpath_develop.ps1'
+[4.679s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/pandora/robot/ros2_pro/build/vision' returned '0': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/vision/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/vision/build --no-deps symlink_data
+[4.679s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/build/vision/share/vision/hook/pythonpath_develop.dsv'
+[4.680s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/build/vision/share/vision/hook/pythonpath_develop.sh'
+[4.681s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/vision' for CMake module files
+[4.682s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/vision' for CMake config files
+[4.684s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/vision/lib'
+[4.684s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/vision/bin'
+[4.684s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/vision/lib/pkgconfig/vision.pc'
+[4.685s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/vision/lib/python3.10/site-packages'
+[4.685s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision', 'pythonpath')
+[4.685s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/vision/share/vision/hook/pythonpath.ps1'
+[4.686s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/vision/share/vision/hook/pythonpath.dsv'
+[4.687s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/vision/share/vision/hook/pythonpath.sh'
+[4.688s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/vision/bin'
+[4.689s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(vision)
+[4.689s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/vision/share/vision/package.ps1'
+[4.691s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/pandora/robot/ros2_pro/install/vision/share/vision/package.dsv'
+[4.692s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/vision/share/vision/package.sh'
+[4.693s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/vision/share/vision/package.bash'
+[4.694s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/vision/share/vision/package.zsh'
+[4.694s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/pandora/robot/ros2_pro/install/vision/share/colcon-core/packages/vision)
+[4.695s] Level 1:colcon.colcon_core.shell:create_environment_hook('kinetic', 'pythonpath_develop')
+[4.696s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/build/kinetic/share/kinetic/hook/pythonpath_develop.ps1'
+[4.698s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/build/kinetic/share/kinetic/hook/pythonpath_develop.dsv'
+[4.698s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/pandora/robot/ros2_pro/build/kinetic' returned '0': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/kinetic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/kinetic/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/kinetic/build --no-deps symlink_data
+[4.700s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/build/kinetic/share/kinetic/hook/pythonpath_develop.sh'
+[4.702s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/kinetic' for CMake module files
+[4.705s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/kinetic' for CMake config files
+[4.706s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/kinetic/lib'
+[4.707s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/kinetic/bin'
+[4.707s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/kinetic/lib/pkgconfig/kinetic.pc'
+[4.708s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/kinetic/lib/python3.10/site-packages'
+[4.708s] Level 1:colcon.colcon_core.shell:create_environment_hook('kinetic', 'pythonpath')
+[4.709s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/hook/pythonpath.ps1'
+[4.711s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/hook/pythonpath.dsv'
+[4.712s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/hook/pythonpath.sh'
+[4.713s] Level 1:colcon.colcon_core.environment:checking '/home/pandora/robot/ros2_pro/install/kinetic/bin'
+[4.713s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kinetic)
+[4.714s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/package.ps1'
+[4.716s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/package.dsv'
+[4.717s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/package.sh'
+[4.718s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/package.bash'
+[4.719s] INFO:colcon.colcon_core.shell:Creating package script '/home/pandora/robot/ros2_pro/install/kinetic/share/kinetic/package.zsh'
+[4.719s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/pandora/robot/ros2_pro/install/kinetic/share/colcon-core/packages/kinetic)
+[4.720s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.721s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.721s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[4.722s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.736s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.736s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.736s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.764s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.765s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/pandora/robot/ros2_pro/install/local_setup.ps1'
+[4.768s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/pandora/robot/ros2_pro/install/_local_setup_util_ps1.py'
+[4.771s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/pandora/robot/ros2_pro/install/setup.ps1'
+[4.773s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/pandora/robot/ros2_pro/install/local_setup.sh'
+[4.775s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/pandora/robot/ros2_pro/install/_local_setup_util_sh.py'
+[4.776s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/pandora/robot/ros2_pro/install/setup.sh'
+[4.778s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/pandora/robot/ros2_pro/install/local_setup.bash'
+[4.779s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/pandora/robot/ros2_pro/install/setup.bash'
+[4.780s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/pandora/robot/ros2_pro/install/local_setup.zsh'
+[4.782s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/pandora/robot/ros2_pro/install/setup.zsh'

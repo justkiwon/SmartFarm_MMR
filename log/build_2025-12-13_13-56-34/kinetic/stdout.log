@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating kinetic.egg-info
+writing kinetic.egg-info/PKG-INFO
+writing dependency_links to kinetic.egg-info/dependency_links.txt
+writing entry points to kinetic.egg-info/entry_points.txt
+writing requirements to kinetic.egg-info/requires.txt
+writing top-level names to kinetic.egg-info/top_level.txt
+writing manifest file 'kinetic.egg-info/SOURCES.txt'
+reading manifest file 'kinetic.egg-info/SOURCES.txt'
+writing manifest file 'kinetic.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/pandora/robot/ros2_pro/install/kinetic/lib/python3.10/site-packages/kinetic.egg-link (link to .)
+Installing palletizing_node script to /home/pandora/robot/ros2_pro/install/kinetic/lib/kinetic
+
+Installed /home/pandora/robot/ros2_pro/build/kinetic
+running symlink_data
+creating /home/pandora/robot/ros2_pro/install/kinetic/share/ament_index
+creating /home/pandora/robot/ros2_pro/install/kinetic/share/ament_index/resource_index
+creating /home/pandora/robot/ros2_pro/install/kinetic/share/ament_index/resource_index/packages
+symbolically linking /home/pandora/robot/ros2_pro/build/kinetic/resource/kinetic -> /home/pandora/robot/ros2_pro/install/kinetic/share/ament_index/resource_index/packages
+symbolically linking /home/pandora/robot/ros2_pro/build/kinetic/package.xml -> /home/pandora/robot/ros2_pro/install/kinetic/share/kinetic

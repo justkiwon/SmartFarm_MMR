@@ -1,0 +1,24 @@
+[2.464s] Invoking command in '/home/pandora/robot/ros2_pro/build/amr_controller': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/amr_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/amr_controller/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/amr_controller/build --no-deps symlink_data
+[2.901s] running develop
+[3.157s] running egg_info
+[3.158s] creating amr_controller.egg-info
+[3.158s] writing amr_controller.egg-info/PKG-INFO
+[3.158s] writing dependency_links to amr_controller.egg-info/dependency_links.txt
+[3.159s] writing entry points to amr_controller.egg-info/entry_points.txt
+[3.160s] writing requirements to amr_controller.egg-info/requires.txt
+[3.160s] writing top-level names to amr_controller.egg-info/top_level.txt
+[3.161s] writing manifest file 'amr_controller.egg-info/SOURCES.txt'
+[3.163s] reading manifest file 'amr_controller.egg-info/SOURCES.txt'
+[3.164s] writing manifest file 'amr_controller.egg-info/SOURCES.txt'
+[3.167s] running build_ext
+[3.168s] Creating /home/pandora/robot/ros2_pro/install/amr_controller/lib/python3.10/site-packages/amr-controller.egg-link (link to .)
+[3.169s] Installing amr_move_node script to /home/pandora/robot/ros2_pro/install/amr_controller/lib/amr_controller
+[3.170s] 
+[3.170s] Installed /home/pandora/robot/ros2_pro/build/amr_controller
+[3.171s] running symlink_data
+[3.171s] creating /home/pandora/robot/ros2_pro/install/amr_controller/share/ament_index
+[3.171s] creating /home/pandora/robot/ros2_pro/install/amr_controller/share/ament_index/resource_index
+[3.172s] creating /home/pandora/robot/ros2_pro/install/amr_controller/share/ament_index/resource_index/packages
+[3.172s] symbolically linking /home/pandora/robot/ros2_pro/build/amr_controller/resource/amr_controller -> /home/pandora/robot/ros2_pro/install/amr_controller/share/ament_index/resource_index/packages
+[3.173s] symbolically linking /home/pandora/robot/ros2_pro/build/amr_controller/package.xml -> /home/pandora/robot/ros2_pro/install/amr_controller/share/amr_controller
+[3.277s] Invoked command in '/home/pandora/robot/ros2_pro/build/amr_controller' returned '0': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/amr_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/amr_controller/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/amr_controller/build --no-deps symlink_data

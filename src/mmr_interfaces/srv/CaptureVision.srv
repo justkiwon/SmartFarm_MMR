@@ -1,0 +1,11 @@
+# Request
+int32 mode  # 0: Overview, 1: Detail
+float64[] initial_pose # Detail 모드일 때 참고할 대략적 위치 (x,y,z)
+---
+# Response
+bool success
+int32 num_objects
+float64[] poses_x
+float64[] poses_y
+float64[] poses_z
+string[] tags

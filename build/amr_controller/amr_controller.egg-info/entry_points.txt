@@ -1,0 +1,3 @@
+[console_scripts]
+amr_move_node = amr_controller.move_node:main
+

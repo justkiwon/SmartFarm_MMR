@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from mmr_interfaces/srv/RotateTurret.srv
+// generated code does not contain a copyright notice
+
+
+module mmr_interfaces {
+  module srv {
+    module RotateTurret_Request_Constants {
+      const int8 FORWARD = 0;
+      const int8 LEFT = 1;
+      const int8 RIGHT = 2;
+    };
+    struct RotateTurret_Request {
+      int8 direction;
+    };
+    struct RotateTurret_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

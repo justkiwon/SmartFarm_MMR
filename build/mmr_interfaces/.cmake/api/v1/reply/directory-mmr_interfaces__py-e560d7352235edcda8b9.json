@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "mmr_interfaces__py",
+		"source" : "/home/pandora/robot/ros2_pro/build/mmr_interfaces/mmr_interfaces__py"
+	}
+}

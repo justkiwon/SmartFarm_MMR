@@ -1,0 +1,6 @@
+/home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:srv/MoveDistance.idl
+/home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:srv/CaptureVision.idl
+/home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:srv/GetDropPose.idl
+/home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:srv/RotateTurret.idl
+/home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:action/Palletize.idl
+/home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:action/PickAndPlace.idl

@@ -1,0 +1,33 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/capture_vision__type_support.c.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/capture_vision__type_support.c.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.c.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.c.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.c.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.c.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__type_support.c.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__type_support.c.o.d"
+  "libmmr_interfaces__rosidl_typesupport_introspection_c.pdb"
+  "libmmr_interfaces__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/capture_vision__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/capture_vision__type_support.c"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.c"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.c"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -1,0 +1,11 @@
+# Goal
+float64[] pick_pose  # x, y, z
+float64[] place_pose # x, y, z
+---
+# Result
+bool success
+string message
+---
+# Feedback
+float32 progress
+string status

@@ -1,0 +1,3 @@
+[console_scripts]
+mmr_orchestrator_node = mmr_orchestrator.mmr_orchestrator_node:main
+

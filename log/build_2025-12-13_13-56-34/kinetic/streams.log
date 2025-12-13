@@ -1,0 +1,24 @@
+[2.470s] Invoking command in '/home/pandora/robot/ros2_pro/build/kinetic': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/kinetic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/kinetic/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/kinetic/build --no-deps symlink_data
+[2.908s] running develop
+[3.164s] running egg_info
+[3.165s] creating kinetic.egg-info
+[3.166s] writing kinetic.egg-info/PKG-INFO
+[3.166s] writing dependency_links to kinetic.egg-info/dependency_links.txt
+[3.167s] writing entry points to kinetic.egg-info/entry_points.txt
+[3.167s] writing requirements to kinetic.egg-info/requires.txt
+[3.167s] writing top-level names to kinetic.egg-info/top_level.txt
+[3.167s] writing manifest file 'kinetic.egg-info/SOURCES.txt'
+[3.169s] reading manifest file 'kinetic.egg-info/SOURCES.txt'
+[3.170s] writing manifest file 'kinetic.egg-info/SOURCES.txt'
+[3.173s] running build_ext
+[3.175s] Creating /home/pandora/robot/ros2_pro/install/kinetic/lib/python3.10/site-packages/kinetic.egg-link (link to .)
+[3.176s] Installing palletizing_node script to /home/pandora/robot/ros2_pro/install/kinetic/lib/kinetic
+[3.176s] 
+[3.177s] Installed /home/pandora/robot/ros2_pro/build/kinetic
+[3.178s] running symlink_data
+[3.178s] creating /home/pandora/robot/ros2_pro/install/kinetic/share/ament_index
+[3.178s] creating /home/pandora/robot/ros2_pro/install/kinetic/share/ament_index/resource_index
+[3.179s] creating /home/pandora/robot/ros2_pro/install/kinetic/share/ament_index/resource_index/packages
+[3.179s] symbolically linking /home/pandora/robot/ros2_pro/build/kinetic/resource/kinetic -> /home/pandora/robot/ros2_pro/install/kinetic/share/ament_index/resource_index/packages
+[3.179s] symbolically linking /home/pandora/robot/ros2_pro/build/kinetic/package.xml -> /home/pandora/robot/ros2_pro/install/kinetic/share/kinetic
+[3.335s] Invoked command in '/home/pandora/robot/ros2_pro/build/kinetic' returned '0': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/kinetic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/kinetic/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/kinetic/build --no-deps symlink_data

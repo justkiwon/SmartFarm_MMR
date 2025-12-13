@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from mmr_interfaces/srv/GetDropPose.srv
+// generated code does not contain a copyright notice
+
+
+module mmr_interfaces {
+  module srv {
+    struct GetDropPose_Request {
+      string tag;
+    };
+    struct GetDropPose_Response {
+      boolean success;
+
+      double x;
+
+      double y;
+
+      double z;
+    };
+  };
+};

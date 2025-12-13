@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+kinetic/__init__.py
+kinetic/palletizing_node.py
+kinetic.egg-info/PKG-INFO
+kinetic.egg-info/SOURCES.txt
+kinetic.egg-info/dependency_links.txt
+kinetic.egg-info/entry_points.txt
+kinetic.egg-info/requires.txt
+kinetic.egg-info/top_level.txt
+kinetic.egg-info/zip-safe
+resource/kinetic

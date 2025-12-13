@@ -1,0 +1,7 @@
+float64[] pose_2d
+int32 num_points
+---
+bool success
+string message
+---
+float32 progress

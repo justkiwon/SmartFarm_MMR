@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from mmr_interfaces/action/Palletize.action
+// generated code does not contain a copyright notice
+
+
+module mmr_interfaces {
+  module action {
+    struct Palletize_Goal {
+      sequence<double> pose_2d;
+
+      int32 num_points;
+    };
+    struct Palletize_Result {
+      boolean success;
+
+      string message;
+    };
+    struct Palletize_Feedback {
+      float progress;
+    };
+  };
+};

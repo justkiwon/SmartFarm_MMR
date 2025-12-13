@@ -1,0 +1,3 @@
+[console_scripts]
+vision_capture_node = vision.vision_capture_node:main
+

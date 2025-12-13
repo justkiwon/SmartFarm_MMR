@@ -1,0 +1,24 @@
+[2.451s] Invoking command in '/home/pandora/robot/ros2_pro/build/vision': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/vision/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/vision/build --no-deps symlink_data
+[2.891s] running develop
+[3.149s] running egg_info
+[3.149s] creating vision.egg-info
+[3.150s] writing vision.egg-info/PKG-INFO
+[3.150s] writing dependency_links to vision.egg-info/dependency_links.txt
+[3.151s] writing entry points to vision.egg-info/entry_points.txt
+[3.151s] writing requirements to vision.egg-info/requires.txt
+[3.151s] writing top-level names to vision.egg-info/top_level.txt
+[3.151s] writing manifest file 'vision.egg-info/SOURCES.txt'
+[3.153s] reading manifest file 'vision.egg-info/SOURCES.txt'
+[3.154s] writing manifest file 'vision.egg-info/SOURCES.txt'
+[3.158s] running build_ext
+[3.159s] Creating /home/pandora/robot/ros2_pro/install/vision/lib/python3.10/site-packages/vision.egg-link (link to .)
+[3.160s] Installing vision_capture_node script to /home/pandora/robot/ros2_pro/install/vision/lib/vision
+[3.161s] 
+[3.161s] Installed /home/pandora/robot/ros2_pro/build/vision
+[3.162s] running symlink_data
+[3.162s] creating /home/pandora/robot/ros2_pro/install/vision/share/ament_index
+[3.162s] creating /home/pandora/robot/ros2_pro/install/vision/share/ament_index/resource_index
+[3.162s] creating /home/pandora/robot/ros2_pro/install/vision/share/ament_index/resource_index/packages
+[3.163s] symbolically linking /home/pandora/robot/ros2_pro/build/vision/resource/vision -> /home/pandora/robot/ros2_pro/install/vision/share/ament_index/resource_index/packages
+[3.163s] symbolically linking /home/pandora/robot/ros2_pro/build/vision/package.xml -> /home/pandora/robot/ros2_pro/install/vision/share/vision
+[3.300s] Invoked command in '/home/pandora/robot/ros2_pro/build/vision' returned '0': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/vision/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/vision/build --no-deps symlink_data

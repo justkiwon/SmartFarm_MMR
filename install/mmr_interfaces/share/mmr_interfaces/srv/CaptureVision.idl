@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from mmr_interfaces/srv/CaptureVision.srv
+// generated code does not contain a copyright notice
+
+
+module mmr_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Request")
+    struct CaptureVision_Request {
+      @verbatim (language="comment", text=
+        "0: Overview, 1: Detail")
+      int32 mode;
+
+      @verbatim (language="comment", text=
+        "Detail 모드일 때 참고할 대략적 위치 (x,y,z)")
+      sequence<double> initial_pose;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct CaptureVision_Response {
+      boolean success;
+
+      int32 num_objects;
+
+      sequence<double> poses_x;
+
+      sequence<double> poses_y;
+
+      sequence<double> poses_z;
+
+      sequence<string> tags;
+    };
+  };
+};

@@ -1,0 +1,26 @@
+[2.454s] Invoking command in '/home/pandora/robot/ros2_pro/build/mmr_orchestrator': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/mmr_orchestrator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/mmr_orchestrator/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/mmr_orchestrator/build --no-deps symlink_data
+[2.885s] running develop
+[3.142s] running egg_info
+[3.143s] creating mmr_orchestrator.egg-info
+[3.145s] writing mmr_orchestrator.egg-info/PKG-INFO
+[3.145s] writing dependency_links to mmr_orchestrator.egg-info/dependency_links.txt
+[3.145s] writing entry points to mmr_orchestrator.egg-info/entry_points.txt
+[3.145s] writing requirements to mmr_orchestrator.egg-info/requires.txt
+[3.145s] writing top-level names to mmr_orchestrator.egg-info/top_level.txt
+[3.145s] writing manifest file 'mmr_orchestrator.egg-info/SOURCES.txt'
+[3.148s] reading manifest file 'mmr_orchestrator.egg-info/SOURCES.txt'
+[3.149s] writing manifest file 'mmr_orchestrator.egg-info/SOURCES.txt'
+[3.152s] running build_ext
+[3.152s] Creating /home/pandora/robot/ros2_pro/install/mmr_orchestrator/lib/python3.10/site-packages/mmr-orchestrator.egg-link (link to .)
+[3.154s] Installing mmr_orchestrator_node script to /home/pandora/robot/ros2_pro/install/mmr_orchestrator/lib/mmr_orchestrator
+[3.155s] 
+[3.155s] Installed /home/pandora/robot/ros2_pro/build/mmr_orchestrator
+[3.155s] running symlink_data
+[3.156s] creating /home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/ament_index
+[3.156s] creating /home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/ament_index/resource_index
+[3.157s] creating /home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/ament_index/resource_index/packages
+[3.157s] symbolically linking /home/pandora/robot/ros2_pro/build/mmr_orchestrator/resource/mmr_orchestrator -> /home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/ament_index/resource_index/packages
+[3.157s] symbolically linking /home/pandora/robot/ros2_pro/build/mmr_orchestrator/package.xml -> /home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator
+[3.158s] creating /home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/launch
+[3.158s] symbolically linking /home/pandora/robot/ros2_pro/build/mmr_orchestrator/launch/mmr_system.launch.py -> /home/pandora/robot/ros2_pro/install/mmr_orchestrator/share/mmr_orchestrator/launch
+[3.284s] Invoked command in '/home/pandora/robot/ros2_pro/build/mmr_orchestrator' returned '0': CMAKE_PREFIX_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces LD_LIBRARY_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/aarch64-linux-gnu/pkgconfig:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/pkgconfig PS1=(.venv_production) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/pandora/robot/ros2_pro/build/mmr_orchestrator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pandora/robot/ros2_pro/install/mmr_orchestrator/lib/python3.10/site-packages:/home/pandora/robot/ros2_pro/install/mmr_interfaces/lib/python3.10/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/pandora/robot/ros2_pro/install/mmr_interfaces/share VIRTUAL_ENV_PROMPT=(.venv_production) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/pandora/robot/ros2_pro/build/mmr_orchestrator/build --no-deps symlink_data
