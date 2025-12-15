@@ -96,8 +96,9 @@ max_serialized_size_RotateTurret_Request(
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   size_t ret_val = current_alignment - initial_alignment;
@@ -246,6 +247,10 @@ cdr_serialize(
 {
   // Member: success
   cdr << (ros_message.success ? true : false);
+  // Member: current_pose
+  {
+    cdr << ros_message.current_pose;
+  }
   // Member: message
   cdr << ros_message.message;
   return true;
@@ -262,6 +267,11 @@ cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message.success = tmp ? true : false;
+  }
+
+  // Member: current_pose
+  {
+    cdr >> ros_message.current_pose;
   }
 
   // Member: message
@@ -287,6 +297,16 @@ get_serialized_size(
   {
     size_t item_size = sizeof(ros_message.success);
     current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: current_pose
+  {
+    size_t array_size = ros_message.current_pose.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+    size_t item_size = sizeof(ros_message.current_pose[0]);
+    current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
   // Member: message
@@ -323,6 +343,19 @@ max_serialized_size_RotateTurret_Response(
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: current_pose
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
   // Member: message

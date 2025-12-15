@@ -127,8 +127,9 @@ size_t max_serialized_size_mmr_interfaces__srv__RotateTurret_Request(
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   size_t ret_val = current_alignment - initial_alignment;
@@ -227,6 +228,8 @@ extern "C"
 {
 #endif
 
+#include "rosidl_runtime_c/primitives_sequence.h"  // current_pose
+#include "rosidl_runtime_c/primitives_sequence_functions.h"  // current_pose
 #include "rosidl_runtime_c/string.h"  // message
 #include "rosidl_runtime_c/string_functions.h"  // message
 
@@ -247,6 +250,14 @@ static bool _RotateTurret_Response__cdr_serialize(
   // Field name: success
   {
     cdr << (ros_message->success ? true : false);
+  }
+
+  // Field name: current_pose
+  {
+    size_t size = ros_message->current_pose.size;
+    auto array_ptr = ros_message->current_pose.data;
+    cdr << static_cast<uint32_t>(size);
+    cdr.serializeArray(array_ptr, size);
   }
 
   // Field name: message
@@ -280,6 +291,32 @@ static bool _RotateTurret_Response__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->success = tmp ? true : false;
+  }
+
+  // Field name: current_pose
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+
+    // Check there are at least 'size' remaining bytes in the CDR stream before resizing
+    auto old_state = cdr.getState();
+    bool correct_size = cdr.jump(size);
+    cdr.setState(old_state);
+    if (!correct_size) {
+      fprintf(stderr, "sequence size exceeds remaining buffer\n");
+      return false;
+    }
+
+    if (ros_message->current_pose.data) {
+      rosidl_runtime_c__double__Sequence__fini(&ros_message->current_pose);
+    }
+    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->current_pose, size)) {
+      fprintf(stderr, "failed to create array for field 'current_pose'");
+      return false;
+    }
+    auto array_ptr = ros_message->current_pose.data;
+    cdr.deserializeArray(array_ptr, size);
   }
 
   // Field name: message
@@ -321,6 +358,17 @@ size_t get_serialized_size_mmr_interfaces__srv__RotateTurret_Response(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // field.name current_pose
+  {
+    size_t array_size = ros_message->current_pose.size;
+    auto array_ptr = ros_message->current_pose.data;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // field.name message
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
@@ -360,6 +408,18 @@ size_t max_serialized_size_mmr_interfaces__srv__RotateTurret_Response(
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: current_pose
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
   // member: message
   {

@@ -38,7 +38,7 @@ struct RotateTurret_Request_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->direction = 0;
+      this->direction = 0l;
     }
   }
 
@@ -48,18 +48,18 @@ struct RotateTurret_Request_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->direction = 0;
+      this->direction = 0l;
     }
   }
 
   // field types and members
   using _direction_type =
-    int8_t;
+    int32_t;
   _direction_type direction;
 
   // setters for named parameter idiom
   Type & set__direction(
-    const int8_t & _arg)
+    const int32_t & _arg)
   {
     this->direction = _arg;
     return *this;
@@ -193,6 +193,9 @@ struct RotateTurret_Response_
   using _success_type =
     bool;
   _success_type success;
+  using _current_pose_type =
+    std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>>;
+  _current_pose_type current_pose;
   using _message_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
   _message_type message;
@@ -202,6 +205,12 @@ struct RotateTurret_Response_
     const bool & _arg)
   {
     this->success = _arg;
+    return *this;
+  }
+  Type & set__current_pose(
+    const std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>> & _arg)
+  {
+    this->current_pose = _arg;
     return *this;
   }
   Type & set__message(
@@ -254,6 +263,9 @@ struct RotateTurret_Response_
   bool operator==(const RotateTurret_Response_ & other) const
   {
     if (this->success != other.success) {
+      return false;
+    }
+    if (this->current_pose != other.current_pose) {
       return false;
     }
     if (this->message != other.message) {

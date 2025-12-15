@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pandora/robot/ros2_pro/src/mmr_interfaces
+CMAKE_SOURCE_DIR = /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pandora/robot/ros2_pro/build/mmr_interfaces
+CMAKE_BINARY_DIR = /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/pandora/robot/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/robot/ros2_pro/src/mmr_interfaces /home/pandora/robot/ros2_pro/src/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

@@ -87,11 +87,11 @@ class RotateTurret_Request(metaclass=Metaclass_RotateTurret_Request):
     ]
 
     _fields_and_field_types = {
-        'direction': 'int8',
+        'direction': 'int32',
     }
 
     SLOT_TYPES = (
-        rosidl_parser.definition.BasicType('int8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -149,15 +149,20 @@ class RotateTurret_Request(metaclass=Metaclass_RotateTurret_Request):
             assert \
                 isinstance(value, int), \
                 "The 'direction' field must be of type 'int'"
-            assert value >= -128 and value < 128, \
-                "The 'direction' field must be an integer in [-128, 127]"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'direction' field must be an integer in [-2147483648, 2147483647]"
         self._direction = value
 
 
 # Import statements for member types
 
+# Member 'current_pose'
+import array  # noqa: E402, I100
+
 # already imported above
 # import builtins
+
+import math  # noqa: E402, I100
 
 # already imported above
 # import rosidl_parser.definition
@@ -209,16 +214,19 @@ class RotateTurret_Response(metaclass=Metaclass_RotateTurret_Response):
 
     __slots__ = [
         '_success',
+        '_current_pose',
         '_message',
     ]
 
     _fields_and_field_types = {
         'success': 'boolean',
+        'current_pose': 'sequence<double>',
         'message': 'string',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
     )
 
@@ -227,6 +235,7 @@ class RotateTurret_Response(metaclass=Metaclass_RotateTurret_Response):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.success = kwargs.get('success', bool())
+        self.current_pose = array.array('d', kwargs.get('current_pose', []))
         self.message = kwargs.get('message', str())
 
     def __repr__(self):
@@ -260,6 +269,8 @@ class RotateTurret_Response(metaclass=Metaclass_RotateTurret_Response):
             return False
         if self.success != other.success:
             return False
+        if self.current_pose != other.current_pose:
+            return False
         if self.message != other.message:
             return False
         return True
@@ -281,6 +292,34 @@ class RotateTurret_Response(metaclass=Metaclass_RotateTurret_Response):
                 isinstance(value, bool), \
                 "The 'success' field must be of type 'bool'"
         self._success = value
+
+    @builtins.property
+    def current_pose(self):
+        """Message field 'current_pose'."""
+        return self._current_pose
+
+    @current_pose.setter
+    def current_pose(self, value):
+        if isinstance(value, array.array):
+            assert value.typecode == 'd', \
+                "The 'current_pose' array.array() must have the type code of 'd'"
+            self._current_pose = value
+            return
+        if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, float) for v in value) and
+                 all(not (val < -1.7976931348623157e+308 or val > 1.7976931348623157e+308) or math.isinf(val) for val in value)), \
+                "The 'current_pose' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
+        self._current_pose = array.array('d', value)
 
     @builtins.property
     def message(self):

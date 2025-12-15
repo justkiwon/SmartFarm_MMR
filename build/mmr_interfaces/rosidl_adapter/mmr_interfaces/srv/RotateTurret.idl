@@ -11,10 +11,14 @@ module mmr_interfaces {
       const int8 RIGHT = 2;
     };
     struct RotateTurret_Request {
-      int8 direction;
+      int32 direction;
     };
     struct RotateTurret_Response {
       boolean success;
+
+      @verbatim (language="comment", text=
+        "[x, y, z] in mm after rotation")
+      sequence<double> current_pose;
 
       string message;
     };

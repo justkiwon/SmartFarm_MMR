@@ -3,6 +3,7 @@ setup.cfg
 setup.py
 resource/vision
 vision/__init__.py
+vision/strawberry_client.py
 vision/vision_capture_node.py
 vision.egg-info/PKG-INFO
 vision.egg-info/SOURCES.txt

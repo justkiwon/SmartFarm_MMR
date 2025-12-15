@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pandora/robot/ros2_pro/src/mmr_interfaces
+CMAKE_SOURCE_DIR = /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pandora/robot/ros2_pro/build/mmr_interfaces
+CMAKE_BINARY_DIR = /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces
 
 # Include any dependencies generated for this target.
 include CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend.make
@@ -86,6 +86,7 @@ rosidl_generator_c/mmr_interfaces/srv/move_distance.h: rosidl_adapter/mmr_interf
 rosidl_generator_c/mmr_interfaces/srv/move_distance.h: rosidl_adapter/mmr_interfaces/srv/CaptureVision.idl
 rosidl_generator_c/mmr_interfaces/srv/move_distance.h: rosidl_adapter/mmr_interfaces/srv/GetDropPose.idl
 rosidl_generator_c/mmr_interfaces/srv/move_distance.h: rosidl_adapter/mmr_interfaces/srv/RotateTurret.idl
+rosidl_generator_c/mmr_interfaces/srv/move_distance.h: rosidl_adapter/mmr_interfaces/srv/MoveArm.idl
 rosidl_generator_c/mmr_interfaces/srv/move_distance.h: rosidl_adapter/mmr_interfaces/action/Palletize.idl
 rosidl_generator_c/mmr_interfaces/srv/move_distance.h: rosidl_adapter/mmr_interfaces/action/PickAndPlace.idl
 rosidl_generator_c/mmr_interfaces/srv/move_distance.h: /opt/ros/humble/share/sensor_msgs/msg/BatteryState.idl
@@ -185,8 +186,8 @@ rosidl_generator_c/mmr_interfaces/srv/move_distance.h: /opt/ros/humble/share/act
 rosidl_generator_c/mmr_interfaces/srv/move_distance.h: /opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl
 rosidl_generator_c/mmr_interfaces/srv/move_distance.h: /opt/ros/humble/share/action_msgs/srv/CancelGoal.idl
 rosidl_generator_c/mmr_interfaces/srv/move_distance.h: /opt/ros/humble/share/unique_identifier_msgs/msg/UUID.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
-	/home/pandora/dev/strawberry/shared/venvs/.venv_production/bin/python3 /opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c__arguments.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c__arguments.json
 
 rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.h: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.h
@@ -233,6 +234,18 @@ rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__struct.h: rosidl_gen
 rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__type_support.h: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__type_support.h
 
+rosidl_generator_c/mmr_interfaces/srv/move_arm.h: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/srv/move_arm.h
+
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.h: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.h
+
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__struct.h: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__struct.h
+
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__type_support.h: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__type_support.h
+
 rosidl_generator_c/mmr_interfaces/action/palletize.h: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/action/palletize.h
 
@@ -269,6 +282,9 @@ rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c: rosidl_
 rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c
 
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c
+
 rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c
 
@@ -278,86 +294,100 @@ rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c: ros
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o: rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o -c /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.i
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.s
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o: rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o -c /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.i
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.s
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o: rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o -c /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.i
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.s
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o: rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o -c /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.i
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.s
+
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/flags.make
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o: rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c
+
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.i
+
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.s
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o: rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o -c /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.i
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.s
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o: rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o -c /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o -MF CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c > CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.i
 
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c -o CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.s
 
 # Object files for target mmr_interfaces__rosidl_generator_c
 mmr_interfaces__rosidl_generator_c_OBJECTS = \
@@ -365,6 +395,7 @@ mmr_interfaces__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o" \
 "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o" \
 "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o" \
+"CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o" \
 "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o" \
 "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o"
 
@@ -375,6 +406,7 @@ libmmr_interfaces__rosidl_generator_c.so: CMakeFiles/mmr_interfaces__rosidl_gene
 libmmr_interfaces__rosidl_generator_c.so: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/capture_vision__functions.c.o
 libmmr_interfaces__rosidl_generator_c.so: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.o
 libmmr_interfaces__rosidl_generator_c.so: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o
+libmmr_interfaces__rosidl_generator_c.so: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o
 libmmr_interfaces__rosidl_generator_c.so: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/palletize__functions.c.o
 libmmr_interfaces__rosidl_generator_c.so: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/action/detail/pick_and_place__functions.c.o
 libmmr_interfaces__rosidl_generator_c.so: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/build.make
@@ -387,7 +419,7 @@ libmmr_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libbuiltin_interfa
 libmmr_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libmmr_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 libmmr_interfaces__rosidl_generator_c.so: CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C shared library libmmr_interfaces__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C shared library libmmr_interfaces__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -417,6 +449,10 @@ CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.h
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__struct.h
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.h
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.h
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__struct.h
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__type_support.h
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.h
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__struct.h
@@ -426,8 +462,9 @@ CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__struct.h
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__type_support.h
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/get_drop_pose.h
+CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/move_arm.h
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/move_distance.h
 CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/mmr_interfaces/srv/rotate_turret.h
-	cd /home/pandora/robot/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/robot/ros2_pro/src/mmr_interfaces /home/pandora/robot/ros2_pro/src/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/depend
 

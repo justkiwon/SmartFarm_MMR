@@ -79,16 +79,32 @@ private:
   ::mmr_interfaces::srv::RotateTurret_Response msg_;
 };
 
+class Init_RotateTurret_Response_current_pose
+{
+public:
+  explicit Init_RotateTurret_Response_current_pose(::mmr_interfaces::srv::RotateTurret_Response & msg)
+  : msg_(msg)
+  {}
+  Init_RotateTurret_Response_message current_pose(::mmr_interfaces::srv::RotateTurret_Response::_current_pose_type arg)
+  {
+    msg_.current_pose = std::move(arg);
+    return Init_RotateTurret_Response_message(msg_);
+  }
+
+private:
+  ::mmr_interfaces::srv::RotateTurret_Response msg_;
+};
+
 class Init_RotateTurret_Response_success
 {
 public:
   Init_RotateTurret_Response_success()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_RotateTurret_Response_message success(::mmr_interfaces::srv::RotateTurret_Response::_success_type arg)
+  Init_RotateTurret_Response_current_pose success(::mmr_interfaces::srv::RotateTurret_Response::_success_type arg)
   {
     msg_.success = std::move(arg);
-    return Init_RotateTurret_Response_message(msg_);
+    return Init_RotateTurret_Response_current_pose(msg_);
   }
 
 private:

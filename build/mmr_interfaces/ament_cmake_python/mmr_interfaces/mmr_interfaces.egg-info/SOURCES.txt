@@ -4,11 +4,3 @@ mmr_interfaces.egg-info/PKG-INFO
 mmr_interfaces.egg-info/SOURCES.txt
 mmr_interfaces.egg-info/dependency_links.txt
 mmr_interfaces.egg-info/top_level.txt
-mmr_interfaces/action/__init__.py
-mmr_interfaces/action/_palletize.py
-mmr_interfaces/action/_pick_and_place.py
-mmr_interfaces/srv/__init__.py
-mmr_interfaces/srv/_capture_vision.py
-mmr_interfaces/srv/_get_drop_pose.py
-mmr_interfaces/srv/_move_distance.py
-mmr_interfaces/srv/_rotate_turret.py

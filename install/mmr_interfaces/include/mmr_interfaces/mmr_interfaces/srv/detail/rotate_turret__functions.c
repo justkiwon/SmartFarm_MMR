@@ -236,6 +236,8 @@ mmr_interfaces__srv__RotateTurret_Request__Sequence__copy(
 
 
 // Include directives for member types
+// Member `current_pose`
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
 // Member `message`
 #include "rosidl_runtime_c/string_functions.h"
 
@@ -246,6 +248,11 @@ mmr_interfaces__srv__RotateTurret_Response__init(mmr_interfaces__srv__RotateTurr
     return false;
   }
   // success
+  // current_pose
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->current_pose, 0)) {
+    mmr_interfaces__srv__RotateTurret_Response__fini(msg);
+    return false;
+  }
   // message
   if (!rosidl_runtime_c__String__init(&msg->message)) {
     mmr_interfaces__srv__RotateTurret_Response__fini(msg);
@@ -261,6 +268,8 @@ mmr_interfaces__srv__RotateTurret_Response__fini(mmr_interfaces__srv__RotateTurr
     return;
   }
   // success
+  // current_pose
+  rosidl_runtime_c__double__Sequence__fini(&msg->current_pose);
   // message
   rosidl_runtime_c__String__fini(&msg->message);
 }
@@ -273,6 +282,12 @@ mmr_interfaces__srv__RotateTurret_Response__are_equal(const mmr_interfaces__srv_
   }
   // success
   if (lhs->success != rhs->success) {
+    return false;
+  }
+  // current_pose
+  if (!rosidl_runtime_c__double__Sequence__are_equal(
+      &(lhs->current_pose), &(rhs->current_pose)))
+  {
     return false;
   }
   // message
@@ -294,6 +309,12 @@ mmr_interfaces__srv__RotateTurret_Response__copy(
   }
   // success
   output->success = input->success;
+  // current_pose
+  if (!rosidl_runtime_c__double__Sequence__copy(
+      &(input->current_pose), &(output->current_pose)))
+  {
+    return false;
+  }
   // message
   if (!rosidl_runtime_c__String__copy(
       &(input->message), &(output->message)))

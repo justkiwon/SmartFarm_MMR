@@ -40,7 +40,7 @@ void RotateTurret_Request_fini_function(void * message_memory)
 static const ::rosidl_typesupport_introspection_cpp::MessageMember RotateTurret_Request_message_member_array[1] = {
   {
     "direction",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT8,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -156,7 +156,52 @@ void RotateTurret_Response_fini_function(void * message_memory)
   typed_message->~RotateTurret_Response();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember RotateTurret_Response_message_member_array[2] = {
+size_t size_function__RotateTurret_Response__current_pose(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<double> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__RotateTurret_Response__current_pose(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<double> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__RotateTurret_Response__current_pose(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<double> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__RotateTurret_Response__current_pose(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const double *>(
+    get_const_function__RotateTurret_Response__current_pose(untyped_member, index));
+  auto & value = *reinterpret_cast<double *>(untyped_value);
+  value = item;
+}
+
+void assign_function__RotateTurret_Response__current_pose(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<double *>(
+    get_function__RotateTurret_Response__current_pose(untyped_member, index));
+  const auto & value = *reinterpret_cast<const double *>(untyped_value);
+  item = value;
+}
+
+void resize_function__RotateTurret_Response__current_pose(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<double> *>(untyped_member);
+  member->resize(size);
+}
+
+static const ::rosidl_typesupport_introspection_cpp::MessageMember RotateTurret_Response_message_member_array[3] = {
   {
     "success",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
@@ -173,6 +218,23 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember RotateTurret_
     nullptr,  // fetch(index, &value) function pointer
     nullptr,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
+  },
+  {
+    "current_pose",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(mmr_interfaces::srv::RotateTurret_Response, current_pose),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__RotateTurret_Response__current_pose,  // size() function pointer
+    get_const_function__RotateTurret_Response__current_pose,  // get_const(index) function pointer
+    get_function__RotateTurret_Response__current_pose,  // get(index) function pointer
+    fetch_function__RotateTurret_Response__current_pose,  // fetch(index, &value) function pointer
+    assign_function__RotateTurret_Response__current_pose,  // assign(index, value) function pointer
+    resize_function__RotateTurret_Response__current_pose  // resize(index) function pointer
   },
   {
     "message",  // name
@@ -196,7 +258,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember RotateTurret_
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers RotateTurret_Response_message_members = {
   "mmr_interfaces::srv",  // message namespace
   "RotateTurret_Response",  // message name
-  2,  // number of fields
+  3,  // number of fields
   sizeof(mmr_interfaces::srv::RotateTurret_Response),
   RotateTurret_Response_message_member_array,  // message members
   RotateTurret_Response_init_function,  // function to initialize message memory (memory has to be allocated)

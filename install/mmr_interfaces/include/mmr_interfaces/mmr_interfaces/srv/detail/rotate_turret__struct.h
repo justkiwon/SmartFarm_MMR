@@ -38,7 +38,7 @@ enum
 /// Struct defined in srv/RotateTurret in the package mmr_interfaces.
 typedef struct mmr_interfaces__srv__RotateTurret_Request
 {
-  int8_t direction;
+  int32_t direction;
 } mmr_interfaces__srv__RotateTurret_Request;
 
 // Struct for a sequence of mmr_interfaces__srv__RotateTurret_Request.
@@ -55,6 +55,8 @@ typedef struct mmr_interfaces__srv__RotateTurret_Request__Sequence
 // Constants defined in the message
 
 // Include directives for member types
+// Member 'current_pose'
+#include "rosidl_runtime_c/primitives_sequence.h"
 // Member 'message'
 #include "rosidl_runtime_c/string.h"
 
@@ -62,6 +64,8 @@ typedef struct mmr_interfaces__srv__RotateTurret_Request__Sequence
 typedef struct mmr_interfaces__srv__RotateTurret_Response
 {
   bool success;
+  /// [x, y, z] in mm after rotation
+  rosidl_runtime_c__double__Sequence current_pose;
   rosidl_runtime_c__String message;
 } mmr_interfaces__srv__RotateTurret_Response;
 

@@ -19,6 +19,7 @@ setup(
     entry_points={
         'console_scripts': [
             'palletizing_node = kinetic.palletizing_node:main',
+            'xarm_server = kinetic.xarm_pose_server_min:main',
         ],
     },
 )

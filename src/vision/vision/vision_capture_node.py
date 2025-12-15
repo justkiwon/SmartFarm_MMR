@@ -1,57 +1,21 @@
 import sys
 import os
-# Force venv site-packages into sys.path to find cv2/xarm if running with system python
+# Force venv site-packages into sys.path to find cv2/xarm/requests if running with system python
 sys.path.insert(0, '/home/pandora/dev/strawberry/shared/venvs/.venv_production/lib/python3.10/site-packages')
 
 import rclpy
 from rclpy.node import Node
-from sensor_msgs.msg import Image, CameraInfo
 import numpy as np
-import cv2
 
 # Updated Srv
 from mmr_interfaces.srv import CaptureVision
 
-class SimpleBridge:
-    def imgmsg_to_cv2(self, img_msg, desired_encoding="passthrough"):
-        if desired_encoding == "bgr8":
-            dtype = np.uint8
-            n_channels = 3
-        elif desired_encoding == "passthrough":
-            if "16UC1" in img_msg.encoding:
-                dtype = np.uint16
-                n_channels = 1
-            elif "8UC3" in img_msg.encoding:
-                 dtype = np.uint8
-                 n_channels = 3
-            else:
-                 # Default fallback if unknown, treat as byte array
-                 dtype = np.uint8
-                 n_channels = 1 # Warning: this might be wrong for complex types
-        else:
-             dtype = np.uint8
-             n_channels = 1
-
-        im = np.ndarray(shape=(img_msg.height, img_msg.width, n_channels),
-                           dtype=dtype, buffer=img_msg.data)
-        
-        # If we need BGR and data is RGB, conversion might be needed, 
-        # but usually cameras send what they say.
-        # Ideally we should check img_msg.encoding.
-        if desired_encoding == "bgr8" and img_msg.encoding == "rgb8":
-            im = cv2.cvtColor(im, cv2.COLOR_RGB2BGR)
-            
-        return im
+from .strawberry_client import StrawberryClient
 
 class VisionCaptureNode(Node):
     """
-    Vision Node for RealSense Setup
+    Vision Node using Strawberry Web API
     
-    Subscriptions:
-      - /camera/color/image_raw (RGB)
-      - /camera/aligned_depth_to_color/image_raw (Depth aligned)
-      - /camera/color/camera_info (Intrinsics)
-      
     Service: vision/capture_vision
     """
     
@@ -60,120 +24,120 @@ class VisionCaptureNode(Node):
 
     def __init__(self):
         super().__init__('vision_capture_node')
-        self.bridge = SimpleBridge()
         
-        # Data buffers
-        self.color_image = None
-        self.depth_image = None
-        self.camera_info = None
-
-        # --- RealSense Subscriptions ---
-        # 1. Color Image
-        self.sub_color = self.create_subscription(
-            Image, 
-            '/camera/color/image_raw', 
-            self.color_cb, 
-            10
-        )
-        
-        # 2. Depth Image (Aligned)
-        self.sub_depth = self.create_subscription(
-            Image, 
-            '/camera/aligned_depth_to_color/image_raw', 
-            self.depth_cb, 
-            10
-        )
-        
-        # 3. Camera Info
-        self.sub_info = self.create_subscription(
-            CameraInfo, 
-            '/camera/color/camera_info', 
-            self.info_cb, 
-            10
-        )
+        # API Client
+        self.client = StrawberryClient(base_url="http://127.0.0.1:8000")
 
         self.srv = self.create_service(
             CaptureVision, 'vision/capture_vision', self.capture_cb
         )
 
-        self.get_logger().info('VisionCaptureNode (RealSense) Ready')
+        self.get_logger().info('VisionCaptureNode (API Wrapper) Ready')
 
-    def color_cb(self, msg):
-        try:
-            # Convert ROS Image to OpenCV (BGR)
-            self.color_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
-        except Exception as e:
-            self.get_logger().error(f'Color conversion error: {e}')
-
-    def depth_cb(self, msg):
-        try:
-            # Convert ROS Image to OpenCV (16-bit mm or 32-bit float)
-            self.depth_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
-        except Exception as e:
-            self.get_logger().error(f'Depth conversion error: {e}')
-
-    def info_cb(self, msg):
-        self.camera_info = msg
-        # We only need info once, but keeping subscription is fine
-        
     def capture_cb(self, request, response):
         """
         Service Callback
         """
-        # For boilerplate purpose, we just warn if no image, but proceed with dummy for Orchestrator test
-        if self.color_image is None or self.depth_image is None:
-            self.get_logger().warn('No RealSense frames received yet. Using dummy return.')
-            # In production, you might return success=False here.
-        
         response.success = True
         
         if request.mode == self.MODE_OVERVIEW:
-            self.run_yolo_overview(response)
+            self.run_api_overview(response)
         elif request.mode == self.MODE_DETAIL:
-            self.run_detail_analysis(request, response)
+            self.run_api_detail(request, response)
         else:
             response.success = False
             self.get_logger().warn(f'Unknown mode: {request.mode}')
 
         return response
 
-    def run_yolo_overview(self, response):
+    def run_api_overview(self, response):
         """
-        [TODO for Vision Team]
-        1. Run YOLO on self.color_image
-        2. Get Bounding Boxes & Class IDs
-        3. Get Depth at Center of Box from self.depth_image
-        4. Deproject Pixel(u,v) + Depth(z) -> Point(x,y,z) using self.camera_info
-        5. Fill response
+        Call API /api/inference/detect
         """
-        self.get_logger().info('[Vision] Doing YOLO Overview...')
+        self.get_logger().info('[Vision] Calling API Detect (Overview)...')
         
-        # --- DUMMY DATA FOR ORCHESTRATOR TEST ---
-        response.num_objects = 2
-        response.poses_x = [0.35, 0.35] # Forward
-        response.poses_y = [0.10, -0.10]
-        response.poses_z = [0.0, 0.0]
-        response.tags    = ["real_box_A", "real_box_B"]
-        # ----------------------------------------
+        detections = self.client.trigger_detect()
+        
+        if not detections:
+            self.get_logger().warn('[Vision] No detections returned from API.')
+            response.num_objects = 0
+            return
 
-    def run_detail_analysis(self, request, response):
+        response.num_objects = len(detections)
+        
+        poses_x = []
+        poses_y = []
+        poses_z = []
+        tags = []
+        
+        for i, det in enumerate(detections):
+            center_mm = det['center_mm']
+            # Keep in mm (no conversion needed)
+            x = center_mm[0]
+            y = center_mm[1]
+            z = center_mm[2]
+            
+            self.get_logger().info(f'  [Obj #{i+1}] Raw(mm): {center_mm}')
+            
+            poses_x.append(x)
+            poses_y.append(y)
+            poses_z.append(z)
+            # Default tag since API doesn't provide class labels in this endpoint yet
+            tags.append(f"item_{i+1}")
+            
+        response.poses_x = poses_x
+        response.poses_y = poses_y
+        response.poses_z = poses_z
+        response.tags = tags
+        
+        self.get_logger().info(f'[Vision] Found {len(detections)} objects.')
+
+    def run_api_detail(self, request, response):
         """
-        [TODO for Vision Team]
-        1. Crop image around request.initial_pose (projected to pixel)
-        2. Do Precision Check (Barcode, OCR, Quality, etc)
-        3. Refine 3D Pose
+        Call API /api/inference/grasp/{id}
         """
         init_pose = request.initial_pose
-        self.get_logger().info(f'[Vision] Doing Detail Analysis on {init_pose}')
+        if hasattr(init_pose, 'position'):
+            target_pos = (init_pose.position.x, init_pose.position.y, init_pose.position.z)
+        else:
+            # It's likely a list/tuple/array from the service request
+            try:
+                target_pos = (float(init_pose[0]), float(init_pose[1]), float(init_pose[2]))
+            except (IndexError, TypeError, ValueError) as e:
+                self.get_logger().error(f'[Vision] Invalid initial_pose format: {init_pose} ({e})')
+                response.success = False
+                return
+
+        self.get_logger().info(f'[Vision] Doing Detail Analysis (Grasp) near {target_pos}')
         
-        # --- DUMMY DATA FOR ORCHESTRATOR TEST ---
-        # Refine pose slightly
+        target_id = self.client.find_closest_target(target_pos)
+        
+        if target_id is None:
+            self.get_logger().error('[Vision] Could not find matching target in cache.')
+            response.success = False
+            return
+            
+        self.get_logger().info(f'[Vision] Identify target ID: {target_id}')
+        
+        grasp_center_mm = self.client.trigger_grasp(target_id)
+        
+        if grasp_center_mm is None:
+             self.get_logger().error(f'[Vision] Grasp detection failed for ID {target_id}')
+             response.success = False
+             return
+             
+        # Keep in mm
+        gx = grasp_center_mm[0]
+        gy = grasp_center_mm[1]
+        gz = grasp_center_mm[2]
+        
         response.num_objects = 1
-        response.poses_x = [init_pose[0]]
-        response.poses_y = [init_pose[1]]
-        response.poses_z = [init_pose[2]]
-        response.tags    = ["verified_item"]
-        # ----------------------------------------
+        response.poses_x = [gx]
+        response.poses_y = [gy]
+        response.poses_z = [gz]
+        response.tags = ["verified_item"]
+        
+        self.get_logger().info(f'[Vision] Grasp point refined: ({gx:.1f}, {gy:.1f}, {gz:.1f}) mm')
 
 def main(args=None):
     rclpy.init(args=args)

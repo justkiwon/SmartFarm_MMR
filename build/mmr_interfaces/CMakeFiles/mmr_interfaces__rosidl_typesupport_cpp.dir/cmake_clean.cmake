@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/capture_vision__type_support.cpp.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/get_drop_pose__type_support.cpp.o"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/get_drop_pose__type_support.cpp.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/move_distance__type_support.cpp.o"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/move_distance__type_support.cpp.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/rotate_turret__type_support.cpp.o"
@@ -17,6 +19,7 @@ file(REMOVE_RECURSE
   "rosidl_typesupport_cpp/mmr_interfaces/action/pick_and_place__type_support.cpp"
   "rosidl_typesupport_cpp/mmr_interfaces/srv/capture_vision__type_support.cpp"
   "rosidl_typesupport_cpp/mmr_interfaces/srv/get_drop_pose__type_support.cpp"
+  "rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp"
   "rosidl_typesupport_cpp/mmr_interfaces/srv/move_distance__type_support.cpp"
   "rosidl_typesupport_cpp/mmr_interfaces/srv/rotate_turret__type_support.cpp"
 )

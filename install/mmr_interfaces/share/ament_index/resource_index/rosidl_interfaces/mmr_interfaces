@@ -10,6 +10,10 @@ srv/GetDropPose.idl
 srv/GetDropPose.srv
 srv/GetDropPose_Request.msg
 srv/GetDropPose_Response.msg
+srv/MoveArm.idl
+srv/MoveArm.srv
+srv/MoveArm_Request.msg
+srv/MoveArm_Response.msg
 srv/MoveDistance.idl
 srv/MoveDistance.srv
 srv/MoveDistance_Request.msg

@@ -2,6 +2,7 @@ package.xml
 setup.cfg
 setup.py
 amr_controller/__init__.py
+amr_controller/amr_test.py
 amr_controller/move_node.py
 amr_controller.egg-info/PKG-INFO
 amr_controller.egg-info/SOURCES.txt

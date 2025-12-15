@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pandora/robot/ros2_pro/src/mmr_interfaces
+CMAKE_SOURCE_DIR = /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pandora/robot/ros2_pro/build/mmr_interfaces
+CMAKE_BINARY_DIR = /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces
 
 # Utility rule file for ament_cmake_python_copy_mmr_interfaces.
 
@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_copy_mmr_interfaces.dir/compiler_depend.ma
 include CMakeFiles/ament_cmake_python_copy_mmr_interfaces.dir/progress.make
 
 CMakeFiles/ament_cmake_python_copy_mmr_interfaces:
-	/usr/bin/cmake -E copy_directory /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_py/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces/ament_cmake_python/mmr_interfaces/mmr_interfaces
+	/usr/bin/cmake -E copy_directory /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_py/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/ament_cmake_python/mmr_interfaces/mmr_interfaces
 
 ament_cmake_python_copy_mmr_interfaces: CMakeFiles/ament_cmake_python_copy_mmr_interfaces
 ament_cmake_python_copy_mmr_interfaces: CMakeFiles/ament_cmake_python_copy_mmr_interfaces.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/ament_cmake_python_copy_mmr_interfaces.dir/clean:
 .PHONY : CMakeFiles/ament_cmake_python_copy_mmr_interfaces.dir/clean
 
 CMakeFiles/ament_cmake_python_copy_mmr_interfaces.dir/depend:
-	cd /home/pandora/robot/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/robot/ros2_pro/src/mmr_interfaces /home/pandora/robot/ros2_pro/src/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles/ament_cmake_python_copy_mmr_interfaces.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles/ament_cmake_python_copy_mmr_interfaces.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ament_cmake_python_copy_mmr_interfaces.dir/depend
 

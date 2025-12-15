@@ -19,6 +19,10 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/mmr_interfaces/srv/detail/get_drop_pose__struct.hpp"
   "rosidl_generator_cpp/mmr_interfaces/srv/detail/get_drop_pose__traits.hpp"
   "rosidl_generator_cpp/mmr_interfaces/srv/detail/get_drop_pose__type_support.hpp"
+  "rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__builder.hpp"
+  "rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__struct.hpp"
+  "rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__traits.hpp"
+  "rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__type_support.hpp"
   "rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__builder.hpp"
   "rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__struct.hpp"
   "rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__traits.hpp"
@@ -28,6 +32,7 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__traits.hpp"
   "rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__type_support.hpp"
   "rosidl_generator_cpp/mmr_interfaces/srv/get_drop_pose.hpp"
+  "rosidl_generator_cpp/mmr_interfaces/srv/move_arm.hpp"
   "rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp"
   "rosidl_generator_cpp/mmr_interfaces/srv/rotate_turret.hpp"
 )

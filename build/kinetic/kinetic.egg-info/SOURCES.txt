@@ -3,6 +3,7 @@ setup.cfg
 setup.py
 kinetic/__init__.py
 kinetic/palletizing_node.py
+kinetic/xarm_pose_server_min.py
 kinetic.egg-info/PKG-INFO
 kinetic.egg-info/SOURCES.txt
 kinetic.egg-info/dependency_links.txt

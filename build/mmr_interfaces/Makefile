@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pandora/robot/ros2_pro/src/mmr_interfaces
+CMAKE_SOURCE_DIR = /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pandora/robot/ros2_pro/build/mmr_interfaces
+CMAKE_BINARY_DIR = /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles /home/pandora/robot/ros2_pro/build/mmr_interfaces//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -501,6 +501,30 @@ rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.s
 .PHONY : rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.c.s
 
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.o: rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o
+.PHONY : rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.o
+
+# target to build an object file
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o
+.PHONY : rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o
+
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.i: rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.i
+.PHONY : rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.i
+
+# target to preprocess a source file
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.i
+.PHONY : rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.i
+
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.s: rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.s
+.PHONY : rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.s
+
+# target to generate assembly for a file
+rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.s
+.PHONY : rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.s
+
 rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.o: rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o
 .PHONY : rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.o
 
@@ -717,6 +741,30 @@ rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c.s
 .PHONY : rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c.s
 
+rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.o: rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.o
+.PHONY : rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.o
+
+# target to build an object file
+rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.o
+.PHONY : rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.o
+
+rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.i: rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.i
+.PHONY : rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.i
+
+# target to preprocess a source file
+rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.i
+.PHONY : rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.i
+
+rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.s: rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.s
+.PHONY : rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.s
+
+# target to generate assembly for a file
+rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.s
+.PHONY : rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.s
+
 rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.o: rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.c.o
 .PHONY : rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.o
 
@@ -860,6 +908,30 @@ rosidl_typesupport_c/mmr_interfaces/srv/get_drop_pose__type_support.s: rosidl_ty
 rosidl_typesupport_c/mmr_interfaces/srv/get_drop_pose__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/mmr_interfaces/srv/get_drop_pose__type_support.cpp.s
 .PHONY : rosidl_typesupport_c/mmr_interfaces/srv/get_drop_pose__type_support.cpp.s
+
+rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.o: rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.o
+
+# target to build an object file
+rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.o
+
+rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.i: rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.i
+
+rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.s: rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.cpp.s
 
 rosidl_typesupport_c/mmr_interfaces/srv/move_distance__type_support.o: rosidl_typesupport_c/mmr_interfaces/srv/move_distance__type_support.cpp.o
 .PHONY : rosidl_typesupport_c/mmr_interfaces/srv/move_distance__type_support.o
@@ -1005,6 +1077,30 @@ rosidl_typesupport_cpp/mmr_interfaces/srv/get_drop_pose__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/get_drop_pose__type_support.cpp.s
 .PHONY : rosidl_typesupport_cpp/mmr_interfaces/srv/get_drop_pose__type_support.cpp.s
 
+rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.o: rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.o
+
+# target to build an object file
+rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.o
+
+rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.i: rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.i
+
+rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.s: rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.cpp.s
+
 rosidl_typesupport_cpp/mmr_interfaces/srv/move_distance__type_support.o: rosidl_typesupport_cpp/mmr_interfaces/srv/move_distance__type_support.cpp.o
 .PHONY : rosidl_typesupport_cpp/mmr_interfaces/srv/move_distance__type_support.o
 
@@ -1148,6 +1244,30 @@ rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_supp
 rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.cpp.s
+
+rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.o: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.o
+
+rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.i: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.i
+
+rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.s: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.s
 
 rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.o: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.o
@@ -1293,6 +1413,30 @@ rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/get_drop_
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/get_drop_pose__type_support.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/get_drop_pose__type_support.cpp.s
 
+rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.o: rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.o
+
+rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.i: rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.i
+
+rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.s: rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.cpp.s
+
 rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_distance__type_support.o: rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_distance__type_support.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_distance__type_support.o
 
@@ -1436,6 +1580,30 @@ rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.c.s
 .PHONY : rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.c.s
+
+rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.o: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.o
+
+rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.i: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.i
+
+rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.s: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.s
 
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.o: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.c.o
 .PHONY : rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.o
@@ -1581,6 +1749,30 @@ rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/get_drop_pose__ty
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/get_drop_pose__type_support.cpp.s
 .PHONY : rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/get_drop_pose__type_support.cpp.s
 
+rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.o: rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.o
+
+rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.i: rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.i
+
+rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.s: rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.s
+
 rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__type_support.o: rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__type_support.cpp.o
 .PHONY : rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__type_support.o
 
@@ -1672,6 +1864,9 @@ help:
 	@echo "... rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.o"
 	@echo "... rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.i"
 	@echo "... rosidl_generator_c/mmr_interfaces/srv/detail/get_drop_pose__functions.s"
+	@echo "... rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.o"
+	@echo "... rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.i"
+	@echo "... rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.s"
 	@echo "... rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.o"
 	@echo "... rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.i"
 	@echo "... rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.s"
@@ -1699,6 +1894,9 @@ help:
 	@echo "... rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.o"
 	@echo "... rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.i"
 	@echo "... rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.s"
+	@echo "... rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.o"
+	@echo "... rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.i"
+	@echo "... rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.s"
 	@echo "... rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.o"
 	@echo "... rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.i"
 	@echo "... rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.s"
@@ -1717,6 +1915,9 @@ help:
 	@echo "... rosidl_typesupport_c/mmr_interfaces/srv/get_drop_pose__type_support.o"
 	@echo "... rosidl_typesupport_c/mmr_interfaces/srv/get_drop_pose__type_support.i"
 	@echo "... rosidl_typesupport_c/mmr_interfaces/srv/get_drop_pose__type_support.s"
+	@echo "... rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.o"
+	@echo "... rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.i"
+	@echo "... rosidl_typesupport_c/mmr_interfaces/srv/move_arm__type_support.s"
 	@echo "... rosidl_typesupport_c/mmr_interfaces/srv/move_distance__type_support.o"
 	@echo "... rosidl_typesupport_c/mmr_interfaces/srv/move_distance__type_support.i"
 	@echo "... rosidl_typesupport_c/mmr_interfaces/srv/move_distance__type_support.s"
@@ -1735,6 +1936,9 @@ help:
 	@echo "... rosidl_typesupport_cpp/mmr_interfaces/srv/get_drop_pose__type_support.o"
 	@echo "... rosidl_typesupport_cpp/mmr_interfaces/srv/get_drop_pose__type_support.i"
 	@echo "... rosidl_typesupport_cpp/mmr_interfaces/srv/get_drop_pose__type_support.s"
+	@echo "... rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.o"
+	@echo "... rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.i"
+	@echo "... rosidl_typesupport_cpp/mmr_interfaces/srv/move_arm__type_support.s"
 	@echo "... rosidl_typesupport_cpp/mmr_interfaces/srv/move_distance__type_support.o"
 	@echo "... rosidl_typesupport_cpp/mmr_interfaces/srv/move_distance__type_support.i"
 	@echo "... rosidl_typesupport_cpp/mmr_interfaces/srv/move_distance__type_support.s"
@@ -1753,6 +1957,9 @@ help:
 	@echo "... rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.s"
+	@echo "... rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.o"
+	@echo "... rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.i"
+	@echo "... rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.s"
 	@echo "... rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.s"
@@ -1771,6 +1978,9 @@ help:
 	@echo "... rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/get_drop_pose__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/get_drop_pose__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/get_drop_pose__type_support.s"
+	@echo "... rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.o"
+	@echo "... rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.i"
+	@echo "... rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_arm__type_support.s"
 	@echo "... rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_distance__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_distance__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/mmr_interfaces/srv/detail/dds_fastrtps/move_distance__type_support.s"
@@ -1789,6 +1999,9 @@ help:
 	@echo "... rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.s"
+	@echo "... rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.o"
+	@echo "... rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.i"
+	@echo "... rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.s"
 	@echo "... rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.s"
@@ -1807,6 +2020,9 @@ help:
 	@echo "... rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/get_drop_pose__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/get_drop_pose__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/get_drop_pose__type_support.s"
+	@echo "... rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.o"
+	@echo "... rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.i"
+	@echo "... rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.s"
 	@echo "... rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__type_support.s"

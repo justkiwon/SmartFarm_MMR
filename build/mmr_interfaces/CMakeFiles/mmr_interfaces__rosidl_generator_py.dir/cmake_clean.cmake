@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_capture_vision_s.c.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c.o"
   "CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.o"
+  "CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.c.o"
   "CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.c.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mmr_interfaces/srv/_rotate_turret_s.c.o"

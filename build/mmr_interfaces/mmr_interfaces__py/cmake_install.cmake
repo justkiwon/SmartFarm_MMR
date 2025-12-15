@@ -1,8 +1,8 @@
-# Install script for directory: /home/pandora/robot/ros2_pro/build/mmr_interfaces/mmr_interfaces__py
+# Install script for directory: /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/mmr_interfaces__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/pandora/robot/ros2_pro/install/mmr_interfaces")
+  set(CMAKE_INSTALL_PREFIX "/home/pandora/dev/strawberry/ros2_pro/install/mmr_interfaces")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

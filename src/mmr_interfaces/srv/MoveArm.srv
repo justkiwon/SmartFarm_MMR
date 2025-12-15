@@ -1,0 +1,3 @@
+float64[] pose  # x, y, z, r, p, yaw
+---
+bool success

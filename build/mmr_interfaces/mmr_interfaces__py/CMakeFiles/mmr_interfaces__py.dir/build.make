@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pandora/robot/ros2_pro/src/mmr_interfaces
+CMAKE_SOURCE_DIR = /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pandora/robot/ros2_pro/build/mmr_interfaces
+CMAKE_BINARY_DIR = /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces
 
 # Utility rule file for mmr_interfaces__py.
 
@@ -73,6 +73,7 @@ mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interf
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_capture_vision.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_rotate_turret.py
+mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_arm.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/action/_palletize.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/action/_pick_and_place.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/__init__.py
@@ -81,6 +82,7 @@ mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interf
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_capture_vision_s.c
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_rotate_turret_s.c
+mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/action/_palletize_s.c
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/action/_pick_and_place_s.c
 
@@ -101,6 +103,7 @@ rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastr
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/srv/CaptureVision.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/srv/GetDropPose.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/srv/RotateTurret.idl
+rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/srv/MoveArm.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/action/Palletize.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/action/PickAndPlace.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/sensor_msgs/msg/BatteryState.idl
@@ -200,8 +203,8 @@ rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastr
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/action_msgs/srv/CancelGoal.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/unique_identifier_msgs/msg/UUID.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
-	cd /home/pandora/robot/ros2_pro/build/mmr_interfaces/mmr_interfaces__py && /home/pandora/dev/strawberry/shared/venvs/.venv_production/bin/python3 /opt/ros/humble/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
+	cd /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/mmr_interfaces__py && /usr/bin/python3 /opt/ros/humble/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_introspection_c.c: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_introspection_c.c
@@ -220,6 +223,9 @@ rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose.py: rosidl_generator_py/mm
 
 rosidl_generator_py/mmr_interfaces/srv/_rotate_turret.py: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/srv/_rotate_turret.py
+
+rosidl_generator_py/mmr_interfaces/srv/_move_arm.py: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/srv/_move_arm.py
 
 rosidl_generator_py/mmr_interfaces/action/_palletize.py: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/action/_palletize.py
@@ -245,6 +251,9 @@ rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c: rosidl_generator_py/m
 rosidl_generator_py/mmr_interfaces/srv/_rotate_turret_s.c: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/srv/_rotate_turret_s.c
 
+rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c
+
 rosidl_generator_py/mmr_interfaces/action/_palletize_s.c: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/action/_palletize_s.c
 
@@ -265,6 +274,8 @@ mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_capture_vision.py
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_capture_vision_s.c
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose.py
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c
+mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_arm.py
+mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_distance.py
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.c
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_rotate_turret.py
@@ -277,10 +288,10 @@ mmr_interfaces__py/CMakeFiles/mmr_interfaces__py.dir/build: mmr_interfaces__py
 .PHONY : mmr_interfaces__py/CMakeFiles/mmr_interfaces__py.dir/build
 
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py.dir/clean:
-	cd /home/pandora/robot/ros2_pro/build/mmr_interfaces/mmr_interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/mmr_interfaces__py.dir/cmake_clean.cmake
+	cd /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/mmr_interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/mmr_interfaces__py.dir/cmake_clean.cmake
 .PHONY : mmr_interfaces__py/CMakeFiles/mmr_interfaces__py.dir/clean
 
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py.dir/depend:
-	cd /home/pandora/robot/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/robot/ros2_pro/src/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces/mmr_interfaces__py /home/pandora/robot/ros2_pro/build/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces/mmr_interfaces__py /home/pandora/robot/ros2_pro/build/mmr_interfaces/mmr_interfaces__py/CMakeFiles/mmr_interfaces__py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/mmr_interfaces__py /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/mmr_interfaces__py /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/mmr_interfaces__py/CMakeFiles/mmr_interfaces__py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : mmr_interfaces__py/CMakeFiles/mmr_interfaces__py.dir/depend
 

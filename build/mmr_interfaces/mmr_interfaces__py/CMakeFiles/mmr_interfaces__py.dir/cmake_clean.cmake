@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/mmr_interfaces/srv/_capture_vision_s.c"
   "../rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose.py"
   "../rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c"
+  "../rosidl_generator_py/mmr_interfaces/srv/_move_arm.py"
+  "../rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c"
   "../rosidl_generator_py/mmr_interfaces/srv/_move_distance.py"
   "../rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.c"
   "../rosidl_generator_py/mmr_interfaces/srv/_rotate_turret.py"

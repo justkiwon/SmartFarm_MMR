@@ -34,7 +34,7 @@ void mmr_interfaces__srv__RotateTurret_Request__rosidl_typesupport_introspection
 static rosidl_typesupport_introspection_c__MessageMember mmr_interfaces__srv__RotateTurret_Request__rosidl_typesupport_introspection_c__RotateTurret_Request_message_member_array[1] = {
   {
     "direction",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT8,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -101,6 +101,8 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 
 
 // Include directives for member types
+// Member `current_pose`
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
 // Member `message`
 #include "rosidl_runtime_c/string_functions.h"
 
@@ -123,7 +125,62 @@ void mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspectio
   mmr_interfaces__srv__RotateTurret_Response__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__RotateTurret_Response_message_member_array[2] = {
+size_t mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__size_function__RotateTurret_Response__current_pose(
+  const void * untyped_member)
+{
+  const rosidl_runtime_c__double__Sequence * member =
+    (const rosidl_runtime_c__double__Sequence *)(untyped_member);
+  return member->size;
+}
+
+const void * mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__get_const_function__RotateTurret_Response__current_pose(
+  const void * untyped_member, size_t index)
+{
+  const rosidl_runtime_c__double__Sequence * member =
+    (const rosidl_runtime_c__double__Sequence *)(untyped_member);
+  return &member->data[index];
+}
+
+void * mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__get_function__RotateTurret_Response__current_pose(
+  void * untyped_member, size_t index)
+{
+  rosidl_runtime_c__double__Sequence * member =
+    (rosidl_runtime_c__double__Sequence *)(untyped_member);
+  return &member->data[index];
+}
+
+void mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__fetch_function__RotateTurret_Response__current_pose(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const double * item =
+    ((const double *)
+    mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__get_const_function__RotateTurret_Response__current_pose(untyped_member, index));
+  double * value =
+    (double *)(untyped_value);
+  *value = *item;
+}
+
+void mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__assign_function__RotateTurret_Response__current_pose(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  double * item =
+    ((double *)
+    mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__get_function__RotateTurret_Response__current_pose(untyped_member, index));
+  const double * value =
+    (const double *)(untyped_value);
+  *item = *value;
+}
+
+bool mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__resize_function__RotateTurret_Response__current_pose(
+  void * untyped_member, size_t size)
+{
+  rosidl_runtime_c__double__Sequence * member =
+    (rosidl_runtime_c__double__Sequence *)(untyped_member);
+  rosidl_runtime_c__double__Sequence__fini(member);
+  return rosidl_runtime_c__double__Sequence__init(member, size);
+}
+
+static rosidl_typesupport_introspection_c__MessageMember mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__RotateTurret_Response_message_member_array[3] = {
   {
     "success",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
@@ -140,6 +197,23 @@ static rosidl_typesupport_introspection_c__MessageMember mmr_interfaces__srv__Ro
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "current_pose",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(mmr_interfaces__srv__RotateTurret_Response, current_pose),  // bytes offset in struct
+    NULL,  // default value
+    mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__size_function__RotateTurret_Response__current_pose,  // size() function pointer
+    mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__get_const_function__RotateTurret_Response__current_pose,  // get_const(index) function pointer
+    mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__get_function__RotateTurret_Response__current_pose,  // get(index) function pointer
+    mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__fetch_function__RotateTurret_Response__current_pose,  // fetch(index, &value) function pointer
+    mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__assign_function__RotateTurret_Response__current_pose,  // assign(index, value) function pointer
+    mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__resize_function__RotateTurret_Response__current_pose  // resize(index) function pointer
   },
   {
     "message",  // name
@@ -163,7 +237,7 @@ static rosidl_typesupport_introspection_c__MessageMember mmr_interfaces__srv__Ro
 static const rosidl_typesupport_introspection_c__MessageMembers mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__RotateTurret_Response_message_members = {
   "mmr_interfaces__srv",  // message namespace
   "RotateTurret_Response",  // message name
-  2,  // number of fields
+  3,  // number of fields
   sizeof(mmr_interfaces__srv__RotateTurret_Response),
   mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__RotateTurret_Response_message_member_array,  // message members
   mmr_interfaces__srv__RotateTurret_Response__rosidl_typesupport_introspection_c__RotateTurret_Response_init_function,  // function to initialize message memory (memory has to be allocated)

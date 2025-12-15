@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pandora/robot/ros2_pro/src/mmr_interfaces
+CMAKE_SOURCE_DIR = /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pandora/robot/ros2_pro/build/mmr_interfaces
+CMAKE_BINARY_DIR = /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces
 
 # Utility rule file for mmr_interfaces__cpp.
 
@@ -86,6 +86,11 @@ CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/r
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__struct.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__traits.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__type_support.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/move_arm.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__builder.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__struct.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__traits.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__type_support.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/action/palletize.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/action/detail/palletize__builder.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/action/detail/palletize__struct.hpp
@@ -117,6 +122,7 @@ rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_in
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/srv/CaptureVision.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/srv/GetDropPose.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/srv/RotateTurret.idl
+rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/srv/MoveArm.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/action/Palletize.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/action/PickAndPlace.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: /opt/ros/humble/share/sensor_msgs/msg/BatteryState.idl
@@ -216,8 +222,8 @@ rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: /opt/ros/humble/share
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: /opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: /opt/ros/humble/share/action_msgs/srv/CancelGoal.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: /opt/ros/humble/share/unique_identifier_msgs/msg/UUID.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
-	/home/pandora/dev/strawberry/shared/venvs/.venv_production/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/pandora/robot/ros2_pro/build/mmr_interfaces/rosidl_generator_cpp__arguments.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_cpp__arguments.json
 
 rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__builder.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__builder.hpp
@@ -276,6 +282,21 @@ rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__traits.hpp: rosidl
 rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__type_support.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__type_support.hpp
 
+rosidl_generator_cpp/mmr_interfaces/srv/move_arm.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/move_arm.hpp
+
+rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__builder.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__builder.hpp
+
+rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__struct.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__struct.hpp
+
+rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__traits.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__traits.hpp
+
+rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__type_support.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__type_support.hpp
+
 rosidl_generator_cpp/mmr_interfaces/action/palletize.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/action/palletize.hpp
 
@@ -326,6 +347,10 @@ mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/get_drop_pos
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/get_drop_pose__struct.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/get_drop_pose__traits.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/get_drop_pose__type_support.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__builder.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__struct.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__traits.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__type_support.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__builder.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__struct.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__traits.hpp
@@ -335,6 +360,7 @@ mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turre
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__traits.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__type_support.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/get_drop_pose.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/move_arm.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/rotate_turret.hpp
 mmr_interfaces__cpp: CMakeFiles/mmr_interfaces__cpp.dir/build.make
@@ -349,6 +375,6 @@ CMakeFiles/mmr_interfaces__cpp.dir/clean:
 .PHONY : CMakeFiles/mmr_interfaces__cpp.dir/clean
 
 CMakeFiles/mmr_interfaces__cpp.dir/depend:
-	cd /home/pandora/robot/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/robot/ros2_pro/src/mmr_interfaces /home/pandora/robot/ros2_pro/src/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces /home/pandora/robot/ros2_pro/build/mmr_interfaces/CMakeFiles/mmr_interfaces__cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles/mmr_interfaces__cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/mmr_interfaces__cpp.dir/depend
 
