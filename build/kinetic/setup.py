@@ -1,1 +1,0 @@
-/home/pandora/dev/strawberry/ros2_pro/src/kinetic/setup.py

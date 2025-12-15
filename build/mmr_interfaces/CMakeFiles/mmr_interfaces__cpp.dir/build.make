@@ -91,6 +91,11 @@ CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/m
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__struct.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__traits.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__type_support.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/process_side.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__builder.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__struct.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__traits.hpp
+CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__type_support.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/action/palletize.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/action/detail/palletize__builder.hpp
 CMakeFiles/mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/action/detail/palletize__struct.hpp
@@ -123,6 +128,7 @@ rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_in
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/srv/GetDropPose.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/srv/RotateTurret.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/srv/MoveArm.idl
+rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/srv/ProcessSide.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/action/Palletize.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: rosidl_adapter/mmr_interfaces/action/PickAndPlace.idl
 rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp: /opt/ros/humble/share/sensor_msgs/msg/BatteryState.idl
@@ -297,6 +303,21 @@ rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__traits.hpp: rosidl_gene
 rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__type_support.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/move_arm__type_support.hpp
 
+rosidl_generator_cpp/mmr_interfaces/srv/process_side.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/process_side.hpp
+
+rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__builder.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__builder.hpp
+
+rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__struct.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__struct.hpp
+
+rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__traits.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__traits.hpp
+
+rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__type_support.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__type_support.hpp
+
 rosidl_generator_cpp/mmr_interfaces/action/palletize.hpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/mmr_interfaces/action/palletize.hpp
 
@@ -355,6 +376,10 @@ mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distanc
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__struct.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__traits.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/move_distance__type_support.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__builder.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__struct.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__traits.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/process_side__type_support.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__builder.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__struct.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turret__traits.hpp
@@ -362,6 +387,7 @@ mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/detail/rotate_turre
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/get_drop_pose.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/move_arm.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/move_distance.hpp
+mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/process_side.hpp
 mmr_interfaces__cpp: rosidl_generator_cpp/mmr_interfaces/srv/rotate_turret.hpp
 mmr_interfaces__cpp: CMakeFiles/mmr_interfaces__cpp.dir/build.make
 .PHONY : mmr_interfaces__cpp

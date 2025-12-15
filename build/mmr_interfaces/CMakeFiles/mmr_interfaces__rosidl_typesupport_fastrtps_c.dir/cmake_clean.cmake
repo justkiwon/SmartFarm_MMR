@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.cpp.o"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.cpp.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__type_support_c.cpp.o"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__type_support_c.cpp.o.d"
   "libmmr_interfaces__rosidl_typesupport_fastrtps_c.pdb"
@@ -27,6 +29,8 @@ file(REMOVE_RECURSE
   "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp"
   "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h"
   "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp"
   "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__rosidl_typesupport_fastrtps_c.h"
   "rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__type_support_c.cpp"
 )

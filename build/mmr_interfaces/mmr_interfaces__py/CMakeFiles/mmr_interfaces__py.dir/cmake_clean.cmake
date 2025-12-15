@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c"
   "../rosidl_generator_py/mmr_interfaces/srv/_move_distance.py"
   "../rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.c"
+  "../rosidl_generator_py/mmr_interfaces/srv/_process_side.py"
+  "../rosidl_generator_py/mmr_interfaces/srv/_process_side_s.c"
   "../rosidl_generator_py/mmr_interfaces/srv/_rotate_turret.py"
   "../rosidl_generator_py/mmr_interfaces/srv/_rotate_turret_s.c"
   "CMakeFiles/mmr_interfaces__py"

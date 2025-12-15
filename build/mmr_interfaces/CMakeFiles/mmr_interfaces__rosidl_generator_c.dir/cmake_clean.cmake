@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.c.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o"
   "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.c.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/process_side__functions.c.o"
+  "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/process_side__functions.c.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o"
   "CMakeFiles/mmr_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c.o.d"
   "libmmr_interfaces__rosidl_generator_c.pdb"
@@ -42,6 +44,10 @@ file(REMOVE_RECURSE
   "rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__functions.h"
   "rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__struct.h"
   "rosidl_generator_c/mmr_interfaces/srv/detail/move_distance__type_support.h"
+  "rosidl_generator_c/mmr_interfaces/srv/detail/process_side__functions.c"
+  "rosidl_generator_c/mmr_interfaces/srv/detail/process_side__functions.h"
+  "rosidl_generator_c/mmr_interfaces/srv/detail/process_side__struct.h"
+  "rosidl_generator_c/mmr_interfaces/srv/detail/process_side__type_support.h"
   "rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.c"
   "rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__functions.h"
   "rosidl_generator_c/mmr_interfaces/srv/detail/rotate_turret__struct.h"
@@ -49,6 +55,7 @@ file(REMOVE_RECURSE
   "rosidl_generator_c/mmr_interfaces/srv/get_drop_pose.h"
   "rosidl_generator_c/mmr_interfaces/srv/move_arm.h"
   "rosidl_generator_c/mmr_interfaces/srv/move_distance.h"
+  "rosidl_generator_c/mmr_interfaces/srv/process_side.h"
   "rosidl_generator_c/mmr_interfaces/srv/rotate_turret.h"
 )
 

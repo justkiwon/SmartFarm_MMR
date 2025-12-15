@@ -219,6 +219,9 @@ CMakeFiles/mmr_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/m
  /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__type_support.h \
  /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__struct.h \
  /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/move_arm__functions.h \
+ /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/process_side__type_support.h \
+ /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/process_side__struct.h \
+ /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/srv/detail/process_side__functions.h \
  /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/palletize__type_support.h \
  /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_generator_c/mmr_interfaces/action/detail/palletize__struct.h \
  /opt/ros/humble/include/unique_identifier_msgs/unique_identifier_msgs/msg/detail/uuid__struct.h \

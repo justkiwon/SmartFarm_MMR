@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__type_support.cpp.o"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__type_support.cpp.o.d"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/process_side__type_support.cpp.o"
+  "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/process_side__type_support.cpp.o.d"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/rotate_turret__type_support.cpp.o"
   "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/rotate_turret__type_support.cpp.o.d"
   "libmmr_interfaces__rosidl_typesupport_introspection_cpp.pdb"
@@ -27,6 +29,8 @@ file(REMOVE_RECURSE
   "rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_arm__type_support.cpp"
   "rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_cpp.hpp"
   "rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/move_distance__type_support.cpp"
+  "rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/process_side__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/process_side__type_support.cpp"
   "rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/rotate_turret__rosidl_typesupport_introspection_cpp.hpp"
   "rosidl_typesupport_introspection_cpp/mmr_interfaces/srv/detail/rotate_turret__type_support.cpp"
 )

@@ -4,8 +4,11 @@ from rclpy.node import Node
 from rclpy.action import ActionClient
 
 # Interfaces
-from mmr_interfaces.srv import MoveDistance, CaptureVision, GetDropPose, RotateTurret, MoveArm
+from mmr_interfaces.srv import MoveDistance, CaptureVision, GetDropPose, RotateTurret, MoveArm, ProcessSide
 from mmr_interfaces.action import PickAndPlace
+import numpy as np
+import threading
+import time
 
 class MMROrchestrator(Node):
     """
@@ -29,163 +32,84 @@ class MMROrchestrator(Node):
         self.declare_parameter('step_distance', 0.5)
         self.declare_parameter('total_distance', 5.0)
         self.step_dist = self.get_parameter('step_distance').value
-        self.total_dist = self.get_parameter('total_distance').value
-        self.total_steps = int(self.total_dist / self.step_dist)
+        total_dist = self.get_parameter('total_distance').value
+        self.total_steps = int(total_dist / self.step_dist)
+
+        # Palletizing grid tracking (4x5)
+        self.pallet_row = 0
+        self.pallet_col = 0
+        self.PALLET_ROWS = 4
+        self.PALLET_COLS = 5
 
         # Clients
         self.cli_amr = self.create_client(MoveDistance, 'amr/move_distance')
-        self.cli_vision = self.create_client(CaptureVision, 'vision/capture_vision')
-        self.cli_turret = self.create_client(RotateTurret, 'kinetic/rotate_turret')
-        self.cli_drop = self.create_client(GetDropPose, 'kinetic/get_drop_pose')
-        self.cli_arm_move = self.create_client(MoveArm, 'kinetic/move_arm')
-        self.act_pnp = ActionClient(self, PickAndPlace, 'kinetic/pick_and_place')
-
-        self.get_logger().info('Orchestrator Ready. Waiting for services...')
-        self.wait_for_services()
+        self.cli_process = self.create_client(ProcessSide, 'mmr/process_side')
         
-        self.started = False
+        self.get_logger().info('Orchestrator Ready. Waiting for services...')
+        
+        # Wait for Critical Services
+        while not self.cli_amr.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('Waiting for AMR service...')
+        
+        # Wait for ProcessSide (xArm Node)
+        while not self.cli_process.wait_for_service(timeout_sec=1.0):
+             self.get_logger().info('Waiting for ProcessSide (xArm) service...')
 
-    def wait_for_services(self):
-        self.cli_amr.wait_for_service()
-        self.cli_vision.wait_for_service()
-        self.cli_turret.wait_for_service()
-        self.cli_drop.wait_for_service()
-        self.cli_arm_move.wait_for_service()
-        self.act_pnp.wait_for_server()
-        self.get_logger().info('All Services/Actions Connected!')
+        self.get_logger().info('All Services Connected!')
 
     def on_start(self):
-        # Thread Entry Point
-        import time
-        time.sleep(2.0) # Wait a bit for everything to settle
-        self.run_sequence()
-
+        """ Start the detailed sequence in a thread """
+        t = threading.Thread(target=self.run_sequence)
+        t.start()
+        
     def run_sequence(self):
         self.get_logger().info('>>> MMR MISSION START (Orchestrated Flow) <<<')
-
-        for i in range(1, self.total_steps + 1):
-            self.get_logger().info(f'--- Step {i}/{self.total_steps} ---')
-
-            # 1. LEFT Side Scan & Process
-            self.get_logger().info('[Orchestrator] === LEFT SIDE ===')
-            self.process_side(RotateTurret.Request.LEFT)
+        
+        # Steps
+        steps = []
+        # Run Loop until 5m reached
+        total_covered = 0.0
+        target_total = 5.0 # meters
+        step_len_m = 0.5   # meters (50cm)
+        step_len_cm = 50.0 # used for service
+        
+        while total_covered < target_total:
+            self.get_logger().info(f'=== LOOP START (Covered: {total_covered} / {target_total} m) ===')
             
-            # 2. RIGHT Side Scan & Process
-            self.get_logger().info('[Orchestrator] === RIGHT SIDE ===')
-            self.process_side(RotateTurret.Request.RIGHT)
+            # 1. Process Cycle (Left + Right + Palletize checked internally by Robot)
+            self.get_logger().info('[Orchestrator] Step A: PROCESSING CYCLE (Left -> Right)')
+            self.process_side(0) # This now triggers the FULL cycle in xarm_pose_node
+            # Wait is implied by service call blocking
             
-            # 3. Return to HOME
-            self.get_logger().info('[Orchestrator] Returning to HOME...')
-            self.call_turret(RotateTurret.Request.FORWARD)  # FORWARD = HOME
-
-            # 4. AMR Move (After both sides complete)
-            self.get_logger().info(f'[Orchestrator] Section Done. Moving AMR {self.step_dist}m ...')
-            if not self.call_amr(self.step_dist):
-                self.get_logger().error('AMR Error. Abort.')
+            time.sleep(1.0)
+            
+            # 2. Move AMR (50cm)
+            if total_covered + step_len_m <= target_total:
+                self.get_logger().info('[Orchestrator] Step B: AMR MOVE (50cm)')
+                # amr_move_node expects METERS. It converts to cm.
+                # 0.5m -> 50cm.
+                if self.call_amr(step_len_m):
+                    self.get_logger().info('  AMR Move Success')
+                    total_covered += step_len_m
+                else:
+                    self.get_logger().error('  AMR Move Failed!')
+                    break
+            else:
+                self.get_logger().info('  Target Distance Reached. Stopping.')
                 break
+                
+            time.sleep(1.0)
+            time.sleep(1.0)
             
         self.get_logger().info('>>> MISSION COMPLETE <<<')
 
-    def process_side(self, direction):
-        # 1. Move to Overview Pose
-        self.get_logger().info('[Orchestrator] Moving to Overview Pose...')
-        success, arm_pose_full = self.call_turret(direction)
-        
-        if not success:
-            self.get_logger().error('Turret rotation failed')
-            return
-        
-        if not arm_pose_full or len(arm_pose_full) < 6:
-            self.get_logger().warn('No pose from turret, using default')
-            arm_pose_full = [300.0, 0.0, 400.0, 180.0, 0.0, 0.0]
-        
-        self._current_arm_pose = arm_pose_full  # Store full [x,y,z,r,p,y]
-        self.get_logger().info(f'[Orchestrator] Arm at XYZ: {arm_pose_full[:3]}, RPY: {arm_pose_full[3:6]}')
-
-        # 2. Vision Overview
-        self.get_logger().info('[Orchestrator] Capturing Overview...')
-        found, xs, ys, zs, tags = self.call_vision(mode=0) # Overview
-        
-        if not found or not tags:
-            self.get_logger().info('  -> No items found in overview.')
-            return
-
-        self.get_logger().info(f'  -> Found {len(tags)} items. Starting Loop...')
-
-        # 3. Loop through items
-        for k in range(len(tags)):
-            tag = tags[k]
-            
-            # Get actual robot arm position (stored from turret call)
-            arm_pose = getattr(self, '_current_arm_pose', [300.0, 0.0, 400.0, 180.0, 0.0, 0.0])
-            
-            # [IMPORTANT] Camera Coordinate System:
-            # Camera faces FORWARD (not downward!)
-            # - cam_x: lateral offset (left/right from camera center)
-            # - cam_y: vertical offset (up/down from camera center)
-            # - cam_depth: distance forward (away from camera)
-            cam_x = xs[k]      # mm - lateral offset
-            cam_y = ys[k]      # mm - vertical offset  
-            cam_depth = zs[k]  # mm - forward distance
-            
-            # Transform to Base Frame
-            # Assuming camera's forward direction aligns with robot's current orientation
-            # For LEFT pose: camera points in +Y direction (sideways)
-            # This is a simplified transform - may need calibration!
-            
-            # Simple approximation (needs refinement based on actual setup):
-            base_x = arm_pose[0] + cam_x       # Lateral becomes X offset
-            base_y = arm_pose[1] + cam_depth   # Depth becomes Y (forward for LEFT)
-            base_z = arm_pose[2] - cam_y       # Vertical becomes Z (down is negative)
-            
-            self.get_logger().info(f'  [Item #{k+1}] {tag}')
-            self.get_logger().info(f'    Camera: lateral={cam_x:.1f}, vertical={cam_y:.1f}, depth={cam_depth:.1f} mm')
-            self.get_logger().info(f'    Arm: ({arm_pose[0]:.1f}, {arm_pose[1]:.1f}, {arm_pose[2]:.1f})')
-            self.get_logger().info(f'    Base: ({base_x:.1f}, {base_y:.1f}, {base_z:.1f}) mm')
-
-            # 3-a. Move Arm Near Item (Approach for Detail Shot)
-            # Use SAME orientation as overview (keep aligned)
-            # Z + 200mm offset for approach
-            approach_pose = [base_x, base_y, base_z + 200.0, arm_pose[3], arm_pose[4], arm_pose[5]] 
-            
-            self.get_logger().info(f'    -> Moving to Approach Pose: {approach_pose}')
-            if not self.call_arm_move(approach_pose):
-                self.get_logger().error('    -> Arm Move Failed. Skip.')
-                continue
-
-            # 3-b. Vision Detail (Refine)
-            # Pass base pose (mm) for matching
-            approx_pose = [base_x, base_y, base_z]
-            self.get_logger().info('    -> Capturing Detail Shot...')
-            ok, r_xs, r_ys, r_zs, _ = self.call_vision(mode=1, init_pose=approx_pose)
-            
-            if not ok or not r_xs:
-                self.get_logger().warn('    -> Vision Detail Failed. Skip.')
-                continue
-            
-            # Refined pose from vision (Camera Frame -> Base Frame)
-            # Apply same transform as overview (forward-facing camera)
-            refined_cam_x = r_xs[0]      # mm - lateral
-            refined_cam_y = r_ys[0]      # mm - vertical
-            refined_cam_depth = r_zs[0]  # mm - depth
-            
-            pick_x = arm_pose[0] + refined_cam_x
-            pick_y = arm_pose[1] + refined_cam_depth
-            pick_z = arm_pose[2] - refined_cam_y
-            
-            # IMPORTANT: Also include RPY to stay aligned!
-            pick_pose = [pick_x, pick_y, pick_z, arm_pose[3], arm_pose[4], arm_pose[5]]
-            self.get_logger().info(f'    -> Refined Pick: ({pick_x:.1f}, {pick_y:.1f}, {pick_z:.1f}) RPY=({arm_pose[3]:.1f}, {arm_pose[4]:.1f}, {arm_pose[5]:.1f})')
-
-            # 3-c. Get Drop Pose
-            drop_pose = self.call_get_drop(tag)
-
-            # 3-d. Pick And Place (Grasp -> Place)
-            self.get_logger().info('    -> Executing Grasp & Place Action...')
-            if self.call_pnp(pick_pose, drop_pose):
-                self.get_logger().info('    -> Success.')
-            else:
-                self.get_logger().error('    -> Grasp Action Failed.')
+    def process_side(self, side_idx):
+        # Trigger the xArm Node to process the side
+        self.get_logger().info(f'[Orchestrator] Triggering Process Side: {side_idx}')
+        if self.call_process_side(side_idx):
+            self.get_logger().info('  -> Side Complete.')
+        else:
+            self.get_logger().error('  -> Side Failed.')
 
     # --- Client Wrappers (Running in Mission Thread) ---
     def call_amr(self, dist):
@@ -193,52 +117,27 @@ class MMROrchestrator(Node):
         res = self.cli_amr.call(req)
         return res.success
 
-    def call_turret(self, direction):
-        req = RotateTurret.Request(); req.direction = direction
-        res = self.cli_turret.call(req)
-        if res.success and len(res.current_pose) >= 6:
-            return res.success, res.current_pose[:6]  # Return [x,y,z,r,p,y]
-        return res.success, None
-
-    def call_vision(self, mode, init_pose=[0.0,0.0,0.0]):
-        req = CaptureVision.Request()
-        req.mode = mode
-        req.initial_pose = [float(v) for v in init_pose]
-        res = self.cli_vision.call(req)
-        if res.success:
-            return True, res.poses_x, res.poses_y, res.poses_z, res.tags
-        return False, [], [], [], []
-
-    def call_get_drop(self, tag):
-        req = GetDropPose.Request(); req.tag = tag
-        res = self.cli_drop.call(req)
-        return [res.x, res.y, res.z]
-    
-    def call_arm_move(self, pose_list):
-        req = MoveArm.Request()
-        req.pose = [float(v) for v in pose_list]
-        res = self.cli_arm_move.call(req)
-        return res.success
-
-    def call_pnp(self, pick, place):
-        goal = PickAndPlace.Goal()
-        goal.pick_pose = [float(v) for v in pick]
-        goal.place_pose = [float(v) for v in place]
+    def call_process_side(self, side):
+        req = ProcessSide.Request(); req.side = side # 0=Left, 1=Right
+        future = self.cli_process.call_async(req)
+        # Block until done
+        rclpy.spin_until_future_complete(self, future)
+        return future.result().success
         
-        future = self.act_pnp.send_goal_async(goal)
-        while not future.done():
-            import time; time.sleep(0.1)
-            
-        gh = future.result()
-        if not gh.accepted:
-            self.get_logger().error('    -> PnP Rejected.')
-            return False
-            
-        res_future = gh.get_result_async()
-        while not res_future.done():
-            import time; time.sleep(0.1)
-            
-        return res_future.result().result.success
+    def get_next_pallet_slot(self):
+        """Get next pallet coordinates in 4x5 grid (row, col) and increment"""
+        row = self.pallet_row
+        col = self.pallet_col
+        
+        # Increment for next time
+        self.pallet_col += 1
+        if self.pallet_col >= self.PALLET_COLS:
+            self.pallet_col = 0
+            self.pallet_row += 1
+            if self.pallet_row >= self.PALLET_ROWS:
+                self.pallet_row = 0  # Wrap around
+        
+        return row, col
     
     def get_arm_pose(self):
         """Get approximate arm position based on last direction"""

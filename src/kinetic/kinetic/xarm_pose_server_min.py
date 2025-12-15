@@ -166,6 +166,33 @@ def main():
                                 conn.sendall(b"NG\n"); print("❌ Get pose error:", e)
                             continue
                         
+                        # Check for MOVEL_TOOL command
+                        if line.startswith("MOVEL_TOOL:"):
+                            try:
+                                pose_str = line[11:]
+                                parts = [float(x.strip()) for x in pose_str.split(",")]
+                                if len(parts) != 6:
+                                    conn.sendall(b"NG\n"); print("⚠️  Invalid tool pose count")
+                                    continue
+                                x, y, z, r, p, yaw = parts
+                                
+                                # Move Relative to Tool
+                                ret = arm.set_position(x=x, y=y, z=z, roll=r, pitch=p, yaw=yaw,
+                                                    speed=SPEED, acc=ACC, wait=True, relative=True)
+                                
+                                # Add explicit wait to ensure motion settles
+                                time.sleep(0.5)
+                                
+                                if ret < 0:
+                                    print(f"⚠️  Tool Move failed: {ret}")
+                                    conn.sendall(b"NG\n")
+                                else:
+                                    print(f"✅ Reached Tool target")
+                                    conn.sendall(b"OK\n")
+                            except Exception as e:
+                                conn.sendall(b"NG\n"); print("❌ Tool cmd error:", e)
+                            continue
+
                         pose = parse_pose(line)
                         if not pose:
                             # Not a pose, Check Simple Commands

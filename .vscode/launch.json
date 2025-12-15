@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ROS 2: Debug MMR Orchestrator",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/mmr_orchestrator/mmr_orchestrator/mmr_orchestrator_node.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

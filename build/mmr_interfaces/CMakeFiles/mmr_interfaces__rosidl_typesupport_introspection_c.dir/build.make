@@ -82,6 +82,7 @@ rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosi
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h: rosidl_adapter/mmr_interfaces/srv/GetDropPose.idl
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h: rosidl_adapter/mmr_interfaces/srv/RotateTurret.idl
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h: rosidl_adapter/mmr_interfaces/srv/MoveArm.idl
+rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h: rosidl_adapter/mmr_interfaces/srv/ProcessSide.idl
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h: rosidl_adapter/mmr_interfaces/action/Palletize.idl
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h: rosidl_adapter/mmr_interfaces/action/PickAndPlace.idl
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h: /opt/ros/humble/share/sensor_msgs/msg/BatteryState.idl
@@ -196,6 +197,9 @@ rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__rosi
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__rosidl_typesupport_introspection_c.h: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__rosidl_typesupport_introspection_c.h
 
+rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__rosidl_typesupport_introspection_c.h: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__rosidl_typesupport_introspection_c.h
+
 rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__rosidl_typesupport_introspection_c.h: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__rosidl_typesupport_introspection_c.h
 
@@ -216,6 +220,9 @@ rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__type
 
 rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c
+
+rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c
 
 rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c
@@ -293,10 +300,24 @@ CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesup
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c -o CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.s
 
+CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/flags.make
+CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.o: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c
+CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.o -MF CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c
+
+CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c > CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.i
+
+CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c -o CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.s
+
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o: rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o -MF CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c
 
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.i: cmake_force
@@ -310,7 +331,7 @@ CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesup
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o: rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o -MF CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o.d -o CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c
 
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.i: cmake_force
@@ -328,6 +349,7 @@ mmr_interfaces__rosidl_typesupport_introspection_c_OBJECTS = \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.c.o" \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__type_support.c.o" \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.o" \
+"CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.o" \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o" \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o"
 
@@ -339,6 +361,7 @@ libmmr_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/mmr_interfa
 libmmr_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/get_drop_pose__type_support.c.o
 libmmr_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__type_support.c.o
 libmmr_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c.o
+libmmr_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c.o
 libmmr_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/palletize__type_support.c.o
 libmmr_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mmr_interfaces/action/detail/pick_and_place__type_support.c.o
 libmmr_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/build.make
@@ -359,7 +382,7 @@ libmmr_interfaces__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/li
 libmmr_interfaces__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libmmr_interfaces__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/librcutils.so
 libmmr_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C shared library libmmr_interfaces__rosidl_typesupport_introspection_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C shared library libmmr_interfaces__rosidl_typesupport_introspection_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -382,6 +405,8 @@ CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_arm__type_support.c
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_introspection_c.h
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/move_distance__type_support.c
+CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__rosidl_typesupport_introspection_c.h
+CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/process_side__type_support.c
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__rosidl_typesupport_introspection_c.h
 CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/mmr_interfaces/srv/detail/rotate_turret__type_support.c
 	cd /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles/mmr_interfaces__rosidl_typesupport_introspection_c.dir/DependInfo.cmake --color=$(COLOR)

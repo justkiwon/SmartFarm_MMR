@@ -376,6 +376,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmr_interfaces/srv" TYPE FILE FILES "/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces/srv/ProcessSide.idl")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmr_interfaces/action" TYPE FILE FILES "/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces/action/Palletize.idl")
 endif()
 
@@ -441,6 +445,18 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmr_interfaces/srv" TYPE FILE FILES "/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_cmake/srv/MoveArm_Response.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmr_interfaces/srv" TYPE FILE FILES "/home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces/srv/ProcessSide.srv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmr_interfaces/srv" TYPE FILE FILES "/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_cmake/srv/ProcessSide_Request.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmr_interfaces/srv" TYPE FILE FILES "/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_cmake/srv/ProcessSide_Response.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

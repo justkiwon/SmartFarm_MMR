@@ -69,9 +69,16 @@ class AMRMoveNode(Node):
         Sends move command.
         Returns (status_code, json_or_none, text)
         """
+        # Fix: Cast distance to int (server rejects float "50.0")
+        payload = {
+            "distance": int(distance_cm), 
+            "direction": int(direction), 
+            "speed": float(speed)
+        }
+        
         r = requests.post(
             self.move_url,
-            json={"distance": float(distance_cm), "direction": int(direction), "speed": float(speed)},
+            json=payload,
             timeout=30,
         )
         try:
@@ -180,7 +187,7 @@ class AMRMoveNode(Node):
         # direction 결정 (너 예시: direction=0/1)
         # 네가 사용한 코드에서 direction=1을 썼으니,
         # 여기서는 관례로: +distance => direction=0, -distance => direction=1 로 잡음
-        direction = 0 if dist_m > 0 else 1
+        direction = 1 if dist_m > 0 else 0  
 
         self.get_logger().info(
             f"[AMR-HTTP] Move Request: {dist_m:.3f} m -> {distance_cm:.1f} cm, direction={direction}, speed={self.speed}"

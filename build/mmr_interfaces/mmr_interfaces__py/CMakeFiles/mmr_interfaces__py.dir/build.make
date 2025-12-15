@@ -74,6 +74,7 @@ mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interf
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_rotate_turret.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_arm.py
+mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_process_side.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/action/_palletize.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/action/_pick_and_place.py
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/__init__.py
@@ -83,6 +84,7 @@ mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interf
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_get_drop_pose_s.c
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_rotate_turret_s.c
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c
+mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_process_side_s.c
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/action/_palletize_s.c
 mmr_interfaces__py/CMakeFiles/mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/action/_pick_and_place_s.c
 
@@ -104,6 +106,7 @@ rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastr
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/srv/GetDropPose.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/srv/RotateTurret.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/srv/MoveArm.idl
+rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/srv/ProcessSide.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/action/Palletize.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/mmr_interfaces/action/PickAndPlace.idl
 rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/sensor_msgs/msg/BatteryState.idl
@@ -227,6 +230,9 @@ rosidl_generator_py/mmr_interfaces/srv/_rotate_turret.py: rosidl_generator_py/mm
 rosidl_generator_py/mmr_interfaces/srv/_move_arm.py: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/srv/_move_arm.py
 
+rosidl_generator_py/mmr_interfaces/srv/_process_side.py: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/srv/_process_side.py
+
 rosidl_generator_py/mmr_interfaces/action/_palletize.py: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/action/_palletize.py
 
@@ -254,6 +260,9 @@ rosidl_generator_py/mmr_interfaces/srv/_rotate_turret_s.c: rosidl_generator_py/m
 rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c
 
+rosidl_generator_py/mmr_interfaces/srv/_process_side_s.c: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/srv/_process_side_s.c
+
 rosidl_generator_py/mmr_interfaces/action/_palletize_s.c: rosidl_generator_py/mmr_interfaces/_mmr_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/mmr_interfaces/action/_palletize_s.c
 
@@ -278,6 +287,8 @@ mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_arm.py
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_arm_s.c
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_distance.py
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_move_distance_s.c
+mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_process_side.py
+mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_process_side_s.c
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_rotate_turret.py
 mmr_interfaces__py: rosidl_generator_py/mmr_interfaces/srv/_rotate_turret_s.c
 mmr_interfaces__py: mmr_interfaces__py/CMakeFiles/mmr_interfaces__py.dir/build.make

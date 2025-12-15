@@ -82,6 +82,7 @@ rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_ty
 rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/mmr_interfaces/srv/GetDropPose.idl
 rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/mmr_interfaces/srv/RotateTurret.idl
 rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/mmr_interfaces/srv/MoveArm.idl
+rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/mmr_interfaces/srv/ProcessSide.idl
 rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/mmr_interfaces/action/Palletize.idl
 rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/mmr_interfaces/action/PickAndPlace.idl
 rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h: /opt/ros/humble/share/sensor_msgs/msg/BatteryState.idl
@@ -211,6 +212,12 @@ rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__rosidl_typesup
 rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp
 
+rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__rosidl_typesupport_fastrtps_c.h: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__rosidl_typesupport_fastrtps_c.h
+
+rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp
+
 rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__rosidl_typesupport_fastrtps_c.h: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__rosidl_typesupport_fastrtps_c.h
 
@@ -293,10 +300,24 @@ CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp -o CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.s
 
+CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/flags.make
+CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp
+CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o -MF CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o.d -o CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp
+
+CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp > CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.i
+
+CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp -o CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.s
+
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o -MF CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o.d -o CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp
 
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.i: cmake_force
@@ -310,7 +331,7 @@ CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/flags.make
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o -MF CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o.d -o CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o -c /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp
 
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.i: cmake_force
@@ -328,6 +349,7 @@ mmr_interfaces__rosidl_typesupport_fastrtps_c_OBJECTS = \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.cpp.o" \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__type_support_c.cpp.o" \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.o" \
+"CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o" \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o" \
 "CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o"
 
@@ -339,6 +361,7 @@ libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/mmr_interfaces__
 libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/get_drop_pose__type_support_c.cpp.o
 libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__type_support_c.cpp.o
 libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp.o
+libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp.o
 libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/palletize__type_support_c.cpp.o
 libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mmr_interfaces/action/detail/pick_and_place__type_support_c.cpp.o
 libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make
@@ -362,7 +385,7 @@ libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: /opt/ros/humble/lib/libuniq
 libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: /opt/ros/humble/lib/librcutils.so
 libmmr_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library libmmr_interfaces__rosidl_typesupport_fastrtps_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX shared library libmmr_interfaces__rosidl_typesupport_fastrtps_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -385,6 +408,8 @@ CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_type
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_arm__type_support_c.cpp
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__rosidl_typesupport_fastrtps_c.h
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/move_distance__type_support_c.cpp
+CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__rosidl_typesupport_fastrtps_c.h
+CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/process_side__type_support_c.cpp
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__rosidl_typesupport_fastrtps_c.h
 CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/mmr_interfaces/srv/detail/rotate_turret__type_support_c.cpp
 	cd /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/CMakeFiles/mmr_interfaces__rosidl_typesupport_fastrtps_c.dir/DependInfo.cmake --color=$(COLOR)

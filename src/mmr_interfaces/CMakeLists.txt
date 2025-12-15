@@ -11,6 +11,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/GetDropPose.srv"
   "srv/RotateTurret.srv"
   "srv/MoveArm.srv"
+  "srv/ProcessSide.srv"
   "action/Palletize.action"
   "action/PickAndPlace.action"
   DEPENDENCIES sensor_msgs

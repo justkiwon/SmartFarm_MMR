@@ -6,6 +6,7 @@
     "/home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces:srv/GetDropPose.srv",
     "/home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces:srv/RotateTurret.srv",
     "/home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces:srv/MoveArm.srv",
+    "/home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces:srv/ProcessSide.srv",
     "/home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces:action/Palletize.action",
     "/home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces:action/PickAndPlace.action"
   ]

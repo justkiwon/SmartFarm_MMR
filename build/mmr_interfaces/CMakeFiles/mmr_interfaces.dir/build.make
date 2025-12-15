@@ -81,6 +81,9 @@ CMakeFiles/mmr_interfaces: rosidl_cmake/srv/RotateTurret_Response.msg
 CMakeFiles/mmr_interfaces: /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces/srv/MoveArm.srv
 CMakeFiles/mmr_interfaces: rosidl_cmake/srv/MoveArm_Request.msg
 CMakeFiles/mmr_interfaces: rosidl_cmake/srv/MoveArm_Response.msg
+CMakeFiles/mmr_interfaces: /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces/srv/ProcessSide.srv
+CMakeFiles/mmr_interfaces: rosidl_cmake/srv/ProcessSide_Request.msg
+CMakeFiles/mmr_interfaces: rosidl_cmake/srv/ProcessSide_Response.msg
 CMakeFiles/mmr_interfaces: /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces/action/Palletize.action
 CMakeFiles/mmr_interfaces: /home/pandora/dev/strawberry/ros2_pro/src/mmr_interfaces/action/PickAndPlace.action
 CMakeFiles/mmr_interfaces: /opt/ros/humble/share/sensor_msgs/msg/BatteryState.idl

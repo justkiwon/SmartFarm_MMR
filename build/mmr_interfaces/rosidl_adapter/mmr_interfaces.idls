@@ -3,5 +3,6 @@
 /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:srv/GetDropPose.idl
 /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:srv/RotateTurret.idl
 /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:srv/MoveArm.idl
+/home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:srv/ProcessSide.idl
 /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:action/Palletize.idl
 /home/pandora/dev/strawberry/ros2_pro/build/mmr_interfaces/rosidl_adapter/mmr_interfaces:action/PickAndPlace.idl

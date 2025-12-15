@@ -18,6 +18,10 @@ srv/MoveDistance.idl
 srv/MoveDistance.srv
 srv/MoveDistance_Request.msg
 srv/MoveDistance_Response.msg
+srv/ProcessSide.idl
+srv/ProcessSide.srv
+srv/ProcessSide_Request.msg
+srv/ProcessSide_Response.msg
 srv/RotateTurret.idl
 srv/RotateTurret.srv
 srv/RotateTurret_Request.msg
