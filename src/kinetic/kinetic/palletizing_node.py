@@ -16,7 +16,7 @@ class PalletizingNode(Node):
     Slot Manager Node
     Provides: kinetic/get_drop_pose
     """
-    PAMMET_ROWS = 4
+    PALLET_ROWS = 4
     PALLET_COLS = 5
     
     PALLET_START_X = 400.0  # mm
@@ -43,11 +43,10 @@ class PalletizingNode(Node):
         # Implies Inner Loop = Y (Col), Outer Loop = X (Row)
         # 4 Rows (X), 5 Cols (Y)
         
-        row = self.pallet_index // 5 # X index
-        col = self.pallet_index % 5  # Y index
+        row = self.pallet_index // self.PALLET_COLS  # X index
+        col = self.pallet_index % self.PALLET_COLS   # Y index
         self.pallet_index += 1
-        
-        if self.pallet_index >= 20: 
+        if self.pallet_index >= self.PALLET_ROWS * self.PALLET_COLS:
             self.pallet_index = 0
         
         drop_x = self.PALLET_START_X + (row * self.PALLET_SPACING_X)

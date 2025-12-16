@@ -264,18 +264,18 @@ class XArmPoseNode(Node):
                 # User req: "Z only 15 high wait"
                 
                 # 1. Safe Height
-                ok1 = self.move_pose([d_x, d_y, 240.0, 180, 0, 0], relative=False)
+                ok1 = self.move_pose([d_x, d_y, 240.0, -180, 0, 0], relative=False)
                 # 2. Pre-Drop (Wait)
                 self.get_logger().info('Pre-Drop Wait (Z+15mm)...')
-                ok2 = self.move_pose([d_x, d_y, d_z + 15.0, 180, 0, 0], relative=False)
+                ok2 = self.move_pose([d_x, d_y, d_z + 15.0, -180, 0, 0], relative=False)
                 # 3. Drop
                 self.get_logger().info('Dropping...')
-                ok3 = self.move_pose([d_x, d_y, d_z, 180, 0, 0], relative=False)
+                ok3 = self.move_pose([d_x, d_y, d_z, -180, 0, 0], relative=False)
                 
                 self.gripper(open=True)
                 
                 # 4. Up
-                ok4 = self.move_pose([d_x, d_y, 240.0, 180, 0, 0], relative=False)
+                ok4 = self.move_pose([d_x, d_y, 240.0, -180, 0, 0], relative=False)
                 
                 if not (ok1 and ok2 and ok3 and ok4):
                      self.get_logger().error('Placement Sequence Partial Fail')
