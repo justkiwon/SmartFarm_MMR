@@ -163,7 +163,9 @@ class AMRMoveNode(Node):
                         moved_m += math.hypot(hist[i][1] - hist[i - 1][1], hist[i][2] - hist[i - 1][2])
 
                     if moved_m <= (stopped_eps_cm / 100.0):
-                        return False, "stopped_before_reach", last_pose, final_dist_cm
+                        # User requested tolerance: if stopped, consider it success/reached
+                        self.get_logger().warn(f"AMR Stopped (Moved={moved_m*100:.2f}cm < {stopped_eps_cm}cm). Treating as REACHED.")
+                        return True, "stopped_but_success", last_pose, final_dist_cm
 
             time.sleep(dt)
 

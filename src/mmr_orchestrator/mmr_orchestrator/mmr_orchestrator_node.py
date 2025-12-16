@@ -113,8 +113,10 @@ class MMROrchestrator(Node):
 
     # --- Client Wrappers (Running in Mission Thread) ---
     def call_amr(self, dist):
+        self.get_logger().info(f'[Orchestrator] Sending AMR Move Request: {dist}')
         req = MoveDistance.Request(); req.distance = float(dist)
         res = self.cli_amr.call(req)
+        self.get_logger().info(f'[Orchestrator] AMR Service Returned: success={res.success} msg="{res.message}"')
         return res.success
 
     def call_process_side(self, side):
@@ -183,3 +185,4 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+    
