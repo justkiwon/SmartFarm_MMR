@@ -73,11 +73,12 @@ class VisionCaptureNode(Node):
         for i, det in enumerate(detections):
             center_mm = det['center_mm']
             # Keep in mm (no conversion needed)
-            x = center_mm[0]
-            y = center_mm[1]
-            z = center_mm[2]
+            # User mapping: 1->X(Vert/Up-Down), 2->Y(Horz/Left-Right), 0->Z(Depth/Fwd)
+            x = float(center_mm[1])
+            y = float(center_mm[2])
+            z = float(center_mm[0])
             
-            self.get_logger().info(f'  [Obj #{i+1}] Raw(mm): {center_mm}')
+            self.get_logger().info(f'  [Obj #{i+1}] Raw(mm): {center_mm} -> ToolRelative(x={x}, y={y}, z={z})')
             
             poses_x.append(x)
             poses_y.append(y)
@@ -127,9 +128,10 @@ class VisionCaptureNode(Node):
              return
              
         # Keep in mm
-        gx = grasp_center_mm[0]
-        gy = grasp_center_mm[1]
-        gz = grasp_center_mm[2]
+        # User mapping: 1->X(Vert), 2->Y(Horz), 0->Z(Depth)
+        gx = float(grasp_center_mm[1])
+        gy = float(grasp_center_mm[2])
+        gz = float(grasp_center_mm[0])
         
         response.num_objects = 1
         response.poses_x = [gx]

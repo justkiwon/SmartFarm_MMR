@@ -28,8 +28,8 @@ class XArmPoseNode(Node):
         
         # --- Config ---
         self.ROBOT_IP = '192.168.10.217'
-        self.SPEED = 100
-        self.ACC = 1000
+        self.SPEED = 50
+        self.ACC = 100
         
         # Gripper
         self.GRIP_CLOSE_POS = 0
@@ -81,8 +81,9 @@ class XArmPoseNode(Node):
     # --- Low Level Helpers ---
     def move_joints(self, joints):
         ret = self.arm.set_servo_angle(angle=joints, speed=50, wait=True)
-        if ret < 0:
+        if ret != 0:
             self.get_logger().error(f'Move Joints Failed: {ret}')
+            self.arm.clean_error() # Ensure error cleared here too
             return False
         return True
 
@@ -103,7 +104,7 @@ class XArmPoseNode(Node):
         # User requested: Wait for value after motion
         time.sleep(0.5)
         
-        if ret < 0:
+        if ret != 0:
             self.get_logger().error(f'Move Pose Failed: {ret}. Clearing Error...')
             self.arm.clean_error()
             self.arm.set_state(0)
@@ -113,7 +114,8 @@ class XArmPoseNode(Node):
     def gripper(self, open=True):
         pos = self.GRIP_OPEN_POS if open else self.GRIP_CLOSE_POS
         ret = self.arm.set_gripper_position(pos, wait=True, speed=self.GRIP_SPEED, auto_enable=True)
-        if ret < 0:
+        if ret != 0:
+             self.get_logger().error(f'Gripper Failed: {ret}')
              self.arm.clean_error()
              return False
         return True
@@ -165,7 +167,7 @@ class XArmPoseNode(Node):
              
         req_vis = CaptureVision.Request(); req_vis.mode = 0
         req_vis.initial_pose = [0.0, 0.0, 0.0]
-        res_vis = self.cli_vision.call(req_vis) 
+        res_vis = self.cli_vision.call(req_vis)
         
         if not res_vis.success or not res_vis.tags:
             self.get_logger().info(f'No Items Found on {side_str}.')
@@ -192,70 +194,90 @@ class XArmPoseNode(Node):
 
             # Approach Height Override?
             # t_z is the actual item height. We want to hover ABOVE it.
-            # Approach Z = Item Z + Offset
-            appr_z = t_z + self.gripper_offset_depth 
+            # 2-Stage Relative Approach Logic (Tool Coordinate)
+            # User requirement: "Relative vision move", "Tool Coordinate"
+            # Mapping: X=Vert, Y=Horz, Z=Depth
             
-            self.get_logger().info(f'[{tag}] Approach Target: X={t_x:.1f}, Y={t_y:.1f}, Z={appr_z:.1f} (RawZ={t_z:.1f})')
+            # Vision returns Deltas from Image Center (Tool Center)
+            # t_x (Vert), t_y (Horz), t_z (Depth)
             
-            # 3. Move Approach (Absolute)
-            # Use relative=False
-            if not self.move_pose([t_x, t_y, appr_z, 180, 0, 0], relative=False):
-                self.get_logger().warn('Approach Failed. Skipping Item.')
+            self.get_logger().info(f'[{tag}] Stage 1 Relative Align: X={t_x:.1f}, Y={t_y:.1f} (Z={t_z:.1f} ignored)')
+            
+            # STAGE 1 MOVE: Align X (Vert) and Y (Horz) relative
+            # We assume Vision X/Y aligns with Tool X/Y axes directions
+            if not self.move_pose([t_x, t_y, 0, 0, 0, 0], relative=True):
+                self.get_logger().warn('Stage 1 Align Failed. Skipping.')
                 continue
 
             # 4. Refine (Vision Detail)
-            # We are at Approach Point. Ask for Refined Absolute Pose.
+            # We are now Aligned. Call Refine.
             req_refine = CaptureVision.Request(); req_refine.mode = 1
-            # Pass estimated position to help find ID in cache
-            req_refine.initial_pose = [t_x, t_y, t_z] 
+            # Initial pose hint is less relevant for relative, but passing zero or estimated depth might help?
+            # Passing [0,0, t_z] as hint of depth remaining?
+            req_refine.initial_pose = [0.0, 0.0, t_z] 
             res_refine = self.cli_vision.call(req_refine)
             
-            final_x, final_y, final_z = t_x, t_y, t_z # Default to overview if refine fails?
+            final_x, final_y, final_z = t_x, t_y, t_z # Default if fail
             
             if res_refine.success and res_refine.poses_x:
                 # Refine Success
                 final_x = res_refine.poses_x[0]
                 final_y = res_refine.poses_y[0]
                 final_z = res_refine.poses_z[0]
-                self.get_logger().info(f'[{tag}] Refined Target: X={final_x:.1f}, Y={final_y:.1f}, Z={final_z:.1f}')
+                self.get_logger().info(f'[{tag}] Refined Relative Target: X={final_x:.1f}, Y={final_y:.1f}, Z={final_z:.1f}')
             else:
-                self.get_logger().warn('Refine Vision Failed. Using Overview Pose.')
+                self.get_logger().warn('Refine Vision Failed. Using Last Estimated Depth.')
             
             # 5. Grasp Sequence
-            # Move Down to Grasp Point (Absolute)
-            # Note: final_z is the item Z.
+            # STAGE 2 MOVE: Go to Grasp Point (Relative Z + residual X/Y)
             
-            self.get_logger().info('Descending to Grasp...')
-            if not self.move_pose([final_x, final_y, final_z, 180, 0, 0], relative=False):
-                 self.get_logger().warn('Descent Failed. Retreating.')
-                 self.move_pose([0, 0, 100, 0, 0, 0], relative=True) # Retreat Up relative
+            self.get_logger().info(f'Approaching Grasp Point (Rel Z={final_z:.1f})...')
+            if not self.move_pose([final_x, final_y, final_z, 0, 0, 0], relative=True):
+                 self.get_logger().warn('Grasp Approach Failed. Retreating.')
+                 self.move_pose([0, 0, -100, 0, 0, 0], relative=True) # Retreat Back relative
                  continue
                  
             # Close Gripper
             if not self.gripper(open=False):
                 self.get_logger().warn('Grasp Failed.')
             
-            # 6. Retreat (Up Absolute or Relative)
-            self.get_logger().info('Retreating...')
-            # Move back to Approach Plane or Higher
-            self.move_pose([final_x, final_y, appr_z, 180, 0, 0], relative=False)
+            # 6. Retreat (Back Relative 200mm)
+            self.get_logger().info('Retreating (Back 200mm)...')
+            self.move_pose([0, 0, -200.0, 0, 0, 0], relative=True)
             
-            # 7. Get Drop Pose
+            # 7. Get Drop Pose (Absolute)
+            # NOTE: GetDropPose returns Absolute Base Coordinates? Or Relative?
+            # Usually Drop is fixed absolute location.
             req_drop = GetDropPose.Request(); req_drop.tag = tag
             if self.cli_drop.wait_for_service(timeout_sec=1.0):
                 res_drop = self.cli_drop.call(req_drop)
                 d_x, d_y, d_z = res_drop.x, res_drop.y, res_drop.z
                 
-                self.get_logger().info(f'Placing at: {d_x}, {d_y}, {d_z}')
+                self.get_logger().info(f'Placing at (Abs): {d_x}, {d_y}, {d_z}')
                 
-                # Sequence: Appr (240mm) -> Down (d_z) -> Open -> Up (240mm)
-                # User req: "upper to 240mm", drop at 93.5mm
+                # Move to Drop (Absolute)
+                # Sequence: Up/Safe -> Drop -> Open -> Up
+                
+                # First, Move to Safe Transport Height (Absolute Z=400?)
+                # We need to know where we are or just command absolute.
+                # Sequence: Appr (240mm) -> Pre-Drop(dz+15) -> Drop (dz) -> Open -> Up (240mm)
+                # User req: "Z only 15 high wait"
+                
+                # 1. Safe Height
                 ok1 = self.move_pose([d_x, d_y, 240.0, 180, 0, 0], relative=False)
-                ok2 = self.move_pose([d_x, d_y, d_z, 180, 0, 0], relative=False)
-                self.gripper(open=True)
-                ok3 = self.move_pose([d_x, d_y, 240.0, 180, 0, 0], relative=False)
+                # 2. Pre-Drop (Wait)
+                self.get_logger().info('Pre-Drop Wait (Z+15mm)...')
+                ok2 = self.move_pose([d_x, d_y, d_z + 15.0, 180, 0, 0], relative=False)
+                # 3. Drop
+                self.get_logger().info('Dropping...')
+                ok3 = self.move_pose([d_x, d_y, d_z, 180, 0, 0], relative=False)
                 
-                if not (ok1 and ok2 and ok3):
+                self.gripper(open=True)
+                
+                # 4. Up
+                ok4 = self.move_pose([d_x, d_y, 240.0, 180, 0, 0], relative=False)
+                
+                if not (ok1 and ok2 and ok3 and ok4):
                      self.get_logger().error('Placement Sequence Partial Fail')
             else:
                 self.get_logger().error('GetDropPose Service failed')

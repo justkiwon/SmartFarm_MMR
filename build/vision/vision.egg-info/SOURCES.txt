@@ -12,3 +12,10 @@ resource/vision
 vision/__init__.py
 vision/strawberry_client.py
 vision/vision_capture_node.py
+vision.egg-info/PKG-INFO
+vision.egg-info/SOURCES.txt
+vision.egg-info/dependency_links.txt
+vision.egg-info/entry_points.txt
+vision.egg-info/requires.txt
+vision.egg-info/top_level.txt
+vision.egg-info/zip-safe

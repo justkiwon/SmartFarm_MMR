@@ -16,13 +16,16 @@ class PalletizingNode(Node):
     Slot Manager Node
     Provides: kinetic/get_drop_pose
     """
-    # Pallet Slots (4x5 grid below HOME)
-    # Grid spacing: 50mm
-    PALLET_START_X = 434.8  # mm
-    PALLET_START_Y = 92.6  # mm
-    PALLET_START_Z = 93.5    # mm
-    PALLET_SPACING_X = 60.0 # Keeping existing spacing
-    PALLET_SPACING_Y = 60.0
+    PAMMET_ROWS = 4
+    PALLET_COLS = 5
+    
+    PALLET_START_X = 400.0  # mm
+    PALLET_START_Y = 145.0  # mm
+    PALLET_START_Z = 75.0    # mm
+    
+    # User said: "Decrease Y by 30, Decrease X by 30"
+    PALLET_SPACING_X = -30.0 
+    PALLET_SPACING_Y = -30.0
     
     pallet_index = 0
 
@@ -36,15 +39,19 @@ class PalletizingNode(Node):
 
     def drop_pose_cb(self, request, response):
         """ Calculate where to put the object in 4x5 grid """
-        row = self.pallet_index // 5
-        col = self.pallet_index % 5
+        # User: "Y를 30씩 줄이면서... X를 30씩 줄이면서"
+        # Implies Inner Loop = Y (Col), Outer Loop = X (Row)
+        # 4 Rows (X), 5 Cols (Y)
+        
+        row = self.pallet_index // 5 # X index
+        col = self.pallet_index % 5  # Y index
         self.pallet_index += 1
         
         if self.pallet_index >= 20: 
             self.pallet_index = 0
         
-        drop_x = self.PALLET_START_X + col * self.PALLET_SPACING_X
-        drop_y = self.PALLET_START_Y + row * self.PALLET_SPACING_Y
+        drop_x = self.PALLET_START_X + (row * self.PALLET_SPACING_X)
+        drop_y = self.PALLET_START_Y + (col * self.PALLET_SPACING_Y)
         drop_z = self.PALLET_START_Z
         
         response.x = drop_x
