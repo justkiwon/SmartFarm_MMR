@@ -29,11 +29,11 @@ class MMROrchestrator(Node):
         super().__init__('mmr_orchestrator')
 
         # Params
-        self.declare_parameter('step_distance', 0.5)
-        self.declare_parameter('total_distance', 5.0)
+        self.declare_parameter('step_distance', 0.001) # real test is 0.5
+        self.declare_parameter('run_count', 10) 
         self.step_dist = self.get_parameter('step_distance').value
-        total_dist = self.get_parameter('total_distance').value
-        self.total_steps = int(total_dist / self.step_dist)
+        self.run_count = self.get_parameter('run_count').value
+        self.get_logger().info(f"Orchestrator Configured: run_count={self.run_count}, step={self.step_dist}m")
 
         # Palletizing grid tracking (4x5)
         self.pallet_row = 0
@@ -67,14 +67,11 @@ class MMROrchestrator(Node):
         
         # Steps
         steps = []
-        # Run Loop until 5m reached
-        total_covered = 0.0
-        target_total = 5.0 # meters
-        step_len_m = 0.5   # meters (50cm)
-        step_len_cm = 50.0 # used for service
+        target_count = self.run_count
+        step_len_m = self.step_dist
         
-        while total_covered < target_total:
-            self.get_logger().info(f'=== LOOP START (Covered: {total_covered} / {target_total} m) ===')
+        for i in range(target_count):
+            self.get_logger().info(f'=== LOOP START (Iteration: {i+1} / {target_count}) ===')
             
              # 1. Process Cycle (Left + Right + Palletize checked internally by Robot)
             self.get_logger().info('[Orchestrator] Step A: PROCESSING CYCLE (Left -> Right)')
@@ -84,18 +81,12 @@ class MMROrchestrator(Node):
             time.sleep(1.0)
             
             # 2. Move AMR (50cm)
-            if total_covered + step_len_m <= target_total:
-                self.get_logger().info('[Orchestrator] Step B: AMR MOVE (50cm)')
-                # amr_move_node expects METERS. It converts to cm.
-                # 0.5m -> 50cm.
-                if self.call_amr(step_len_m):
-                    self.get_logger().info('  AMR Move Success')
-                    total_covered += step_len_m
-                else:
-                    self.get_logger().error('  AMR Move Failed!')
-                    break
+            self.get_logger().info('[Orchestrator] Step B: AMR MOVE (50cm)')
+            # amr_move_node expects METERS. It converts to cm.
+            if self.call_amr(step_len_m):
+                self.get_logger().info('  AMR Move Success')
             else:
-                self.get_logger().info('  Target Distance Reached. Stopping.')
+                self.get_logger().error('  AMR Move Failed!')
                 break
                 
             time.sleep(1.0)
@@ -121,10 +112,9 @@ class MMROrchestrator(Node):
 
     def call_process_side(self, side):
         req = ProcessSide.Request(); req.side = side # 0=Left, 1=Right
-        future = self.cli_process.call_async(req)
-        # Block until done
-        rclpy.spin_until_future_complete(self, future)
-        return future.result().success
+        # Sync call (safe in thread because main thread spins node)
+        res = self.cli_process.call(req)
+        return res.success
         
     def get_next_pallet_slot(self):
         """Get next pallet coordinates in 4x5 grid (row, col) and increment"""

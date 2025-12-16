@@ -3,7 +3,7 @@ from setuptools import setup
 package_name = 'amr_controller'
 
 setup(
-    name=package_name,
+    name='amr-controller',
     version='0.0.1',
     packages=[package_name],
     data_files=[

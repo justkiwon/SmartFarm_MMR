@@ -3,7 +3,7 @@ from setuptools import setup
 package_name = 'mmr_orchestrator'
 
 setup(
-    name=package_name,
+    name='mmr-orchestrator',
     version='0.0.1',
     packages=[package_name],
     data_files=[

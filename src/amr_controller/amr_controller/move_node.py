@@ -123,6 +123,7 @@ class AMRMoveNode(Node):
 
         last_pose = start
         final_dist_cm = 0.0
+        consecutive_errors = 0
 
         while rclpy.ok():
             # timeout check
@@ -133,8 +134,14 @@ class AMRMoveNode(Node):
             # read pose
             try:
                 p = self.get_pose()
+                consecutive_errors = 0  # reset on success
             except Exception as e:
-                return False, f"pose_error: {e}", last_pose, final_dist_cm
+                consecutive_errors += 1
+                if consecutive_errors > 5:
+                     return False, f"pose_error_max_retries: {e}", last_pose, final_dist_cm
+                self.get_logger().warn(f"Pose read error ({consecutive_errors}/5): {e}")
+                time.sleep(dt)
+                continue
 
             last_pose = p
             x, y = float(p["x"]), float(p["y"])
@@ -151,8 +158,8 @@ class AMRMoveNode(Node):
                 return True, "reached", last_pose, final_dist_cm
 
             # stopped detection
-            # [Fix] 3-sec Grace Period
-            if (now - t0) > 3.0:
+            # [Fix] 10-sec Grace Period (increased from 3.0s)
+            if (now - t0) > 10.0:
                 hist.append((now, x, y))
                 while hist and (now - hist[0][0] > stopped_window_sec):
                     hist.pop(0)
