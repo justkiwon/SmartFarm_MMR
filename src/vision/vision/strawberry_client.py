@@ -13,22 +13,30 @@ class StrawberryClient:
         """
         Calls POST /api/inference/detect
         Returns: list of dicts with 'center_mm' (x,y,z in mm)
-        Note: The API returns just a list of coordinates [[x,y,z], ...].
-        We will wrap them in objects for local usage.
+        API Response: [[x,y,z], ...] (List of lists) or {'targets': [[x,y,z], ...]}
         """
         url = f"{self.base_url}/api/inference/detect"
         try:
             resp = requests.post(url, timeout=10)
             resp.raise_for_status()
             data = resp.json()
-            # data structure: {'targets': [[x,y,z], ...], 'count': N}
             
-            targets = data.get("targets", [])
+            targets = []
+            if isinstance(data, list):
+                # Direct list of coordinates
+                targets = data
+            elif isinstance(data, dict):
+                # Wrapped in dict
+                targets = data.get("targets", [])
+            
             self.last_detections = []
             results = []
             
             for i, coord in enumerate(targets):
                 # coord is [x, y, z] in mm
+                if not isinstance(coord, list) or len(coord) < 3:
+                     continue
+                     
                 obj = {
                     "id": i + 1, # 1-based index for API
                     "center_mm": coord
@@ -46,14 +54,20 @@ class StrawberryClient:
         """
         Calls POST /api/inference/grasp/{target_id}
         Returns: [x,y,z] in mm
+        API Response: [x,y,z] or {'target': [x,y,z]}
         """
         url = f"{self.base_url}/api/inference/grasp/{target_id}"
         try:
             resp = requests.post(url, timeout=10)
             resp.raise_for_status()
             data = resp.json()
-            # data structure: {'target': [x,y,z]}
-            return data.get("target")
+            
+            if isinstance(data, list) and len(data) >= 3:
+                 return data
+            elif isinstance(data, dict):
+                 return data.get("target")
+            
+            return None
         except requests.RequestException as e:
             self.logger.error(f"Failed to trigger grasp for id {target_id}: {e}")
             return None

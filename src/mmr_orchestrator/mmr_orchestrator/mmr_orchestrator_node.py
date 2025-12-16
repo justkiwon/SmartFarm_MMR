@@ -76,7 +76,7 @@ class MMROrchestrator(Node):
         while total_covered < target_total:
             self.get_logger().info(f'=== LOOP START (Covered: {total_covered} / {target_total} m) ===')
             
-            # 1. Process Cycle (Left + Right + Palletize checked internally by Robot)
+             # 1. Process Cycle (Left + Right + Palletize checked internally by Robot)
             self.get_logger().info('[Orchestrator] Step A: PROCESSING CYCLE (Left -> Right)')
             self.process_side(0) # This now triggers the FULL cycle in xarm_pose_node
             # Wait is implied by service call blocking

@@ -18,10 +18,10 @@ class PalletizingNode(Node):
     """
     # Pallet Slots (4x5 grid below HOME)
     # Grid spacing: 50mm
-    PALLET_START_X = 100.0  # mm
-    PALLET_START_Y = -150.0  # mm
-    PALLET_START_Z = 50.0    # mm
-    PALLET_SPACING_X = 60.0
+    PALLET_START_X = 434.8  # mm
+    PALLET_START_Y = 92.6  # mm
+    PALLET_START_Z = 93.5    # mm
+    PALLET_SPACING_X = 60.0 # Keeping existing spacing
     PALLET_SPACING_Y = 60.0
     
     pallet_index = 0

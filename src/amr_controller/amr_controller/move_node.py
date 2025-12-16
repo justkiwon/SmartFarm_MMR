@@ -22,7 +22,7 @@ class AMRMoveNode(Node):
         super().__init__("amr_move_node")
 
         # ===== Parameters =====
-        self.host = self.declare_parameter("host", "http://192.168.50.66").value
+        self.host = self.declare_parameter("host", "http://192.168.0.8").value
         self.move_path = self.declare_parameter("move_path", "/cmd/move").value
         self.pose_path = self.declare_parameter("pose_path", "/reeman/pose").value
 
@@ -32,11 +32,11 @@ class AMRMoveNode(Node):
         self.timeout_sec = float(self.declare_parameter("timeout_sec", 60.0).value)
 
         # reach 판단 허용오차 (cm)
-        self.eps_cm = float(self.declare_parameter("eps_cm", 0.5).value)  # 짧은 거리면 0.3~0.5 추천
+        self.eps_cm = float(self.declare_parameter("eps_cm", 5.0).value)  # 짧은 거리면 0.3~0.5 추천 -> 2.0으로 완화
 
         # 정지 판정(윈도우 동안 거의 안 움직이면 멈춘 걸로)
         self.stopped_window_sec = float(self.declare_parameter("stopped_window_sec", 1.0).value)
-        self.stopped_eps_cm = float(self.declare_parameter("stopped_eps_cm", 0.3).value)
+        self.stopped_eps_cm = float(self.declare_parameter("stopped_eps_cm", 0.5).value)
 
         self.move_url = f"{self.host}{self.move_path}"
         self.pose_url = f"{self.host}{self.pose_path}"

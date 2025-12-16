@@ -18,7 +18,7 @@ class IndependentVisionTest:
         self.JOINTS_LOOK_RIGHT = [-90, -60, -13, 0, -15, 0]
         self.JOINTS_HOME = [0, -50, -20, 0, -20, 0]
         self.gripper_offset_depth = 220
-        self.gripper_offset_height = 90
+        self.gripper_offset_height = 40
         self.gripper_offset_width = 50 # +50만큼 편향 됨
 
     def _connect_arm(self):
@@ -188,9 +188,10 @@ class IndependentVisionTest:
                     r_lat, r_vert, r_depth = res[0], res[1], res[2]
                     print(f"  [Refine Vision] Raw: {res}")
                     
-                    ref_z = r_depth - self.gripper_offset_depth if r_depth - self.gripper_offset_depth >0 else 0
+                    ref_z = r_depth +self.gripper_offset_depth if r_depth +self.gripper_offset_depth >0 else 0
                     ref_y = r_lat-self.gripper_offset_width if r_lat-self.gripper_offset_width >0 else 0
-                    ref_x = r_vert+self.gripper_offset_height if r_vert+self.gripper_offset_height >0 else 0
+                    ref_x = r_vert if r_vert >0 else 0
+                    #ref_x = r_vert+self.gripper_offset_height if r_vert+self.gripper_offset_height >0 else 0
                     
                     if not self.move_tool(ref_x, ref_y, ref_z):
                          print("Refine Move Failed. Skipping.")

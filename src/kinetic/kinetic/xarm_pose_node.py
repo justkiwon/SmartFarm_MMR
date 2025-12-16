@@ -39,16 +39,16 @@ class XArmPoseNode(Node):
         # Offsets (From test_approach.py)
         self.gripper_offset_depth = 220
         self.gripper_offset_height = 90
-        self.gripper_offset_width = 50
+        self.gripper_offset_width = 0
 
         # Joint Poses
-        self.JOINTS_LOOK_LEFT  = [90, -60, -13, 0, -15, 0]
-        self.JOINTS_LOOK_RIGHT = [-90, -60, -13, 0, -15, 0]
-        self.JOINTS_HOME = [0, -50, -20, 0, -20, 0]
+        self.JOINTS_LOOK_LEFT  = [90, -105, -80, 0, 95, 0]
+        self.JOINTS_LOOK_RIGHT = [-90, -105, -80, 0, 95, 0]
+        self.JOINTS_HOME = [-180, -90, -60, 175, 120, 0]
 
         # Connect xArm
         self.arm = self._connect_arm()
-        
+        self.get_logger().info("Xarm Connected!!!")
         # Services Provided (Use Reentrant Group)
         self.srv_process = self.create_service(ProcessSide, 'mmr/process_side', self.process_side_cb, callback_group=self.cb_group)
         
@@ -130,15 +130,16 @@ class XArmPoseNode(Node):
         # Ignores specific side request, does FULL CYCLE (Left -> Right)
         self.get_logger().info('>>> STARTING HARVEST CYCLE (Left + Right) <<<')
         
-        # 1. Left
-        if not self._process_single_side(0): 
-            self.get_logger().warn('Left Side Interrupted/Failed')
-            # Continue to Right anyway? Or stop? usually continue.
-        
         # 2. Right
         if not self._process_single_side(1):
              self.get_logger().warn('Right Side Interrupted/Failed')
-             
+
+        # 1. Left
+        #if not self._process_single_side(0): 
+        #    self.get_logger().warn('Left Side Interrupted/Failed')
+            # Continue to Right anyway? Or stop? usually continue.
+        
+
         # 3. Home
         self.move_joints(self.JOINTS_HOME)
         
@@ -178,81 +179,66 @@ class XArmPoseNode(Node):
         for k in range(len(tags)):
             tag = tags[k]
             
-            # 3. MAPPING
-            cam_lat = xs[k]
-            cam_vert = ys[k]
-            cam_depth = zs[k]
+            # --- ABSOLUTE ROBOT COORDINATES (No Mapping Needed) ---
+            # API returns Robot Frame X, Y, Z directly.
+            t_x = xs[k]
+            t_y = ys[k]
+            t_z = zs[k]
             
-            # Map Raw Vision to Tool Frame Deltas WITH OFFSETS
-            # Depth -> Z
-            # Lat -> X
-            # Vert -> Y
-            move_z = cam_depth - self.gripper_offset_depth
-            if move_z < 0: move_z = 0
+            # Safety Check: Invalid Depth
+            if t_z > 1500: # 1.5m
+                self.get_logger().error(f"[{tag}] Invalid Z {t_z:.1f}mm (>1.5m). Skipping.")
+                continue
+
+            # Approach Height Override?
+            # t_z is the actual item height. We want to hover ABOVE it.
+            # Approach Z = Item Z + Offset
+            appr_z = t_z + self.gripper_offset_depth 
             
-            move_x = cam_lat - self.gripper_offset_width
-            # Check if negative ok? Relative move can be negative.
-            # test_approach.py: if lat-width > 0 else 0. 
-            # Actually test_approach logic was:
-            # move_y = lat - width if lat - width > 0 else 0
-            # Wait, lat (x in vision) can be negative? 
-            # In test_approach, it seemed to assume positive range or handle it. 
-            # Let's trust test_approach logic:
-            if move_x < 0: move_x = 0 
+            self.get_logger().info(f'[{tag}] Approach Target: X={t_x:.1f}, Y={t_y:.1f}, Z={appr_z:.1f} (RawZ={t_z:.1f})')
             
-            move_y = cam_vert + self.gripper_offset_height
-            if move_y < 0: move_y = 0
-            
-            self.get_logger().info(f'[{tag}] (Overview) Appr Tool: X={move_x:.1f}, Y={move_y:.1f}, Z={move_z:.1f}')
-            
-            # Move Approach
-            if not self.move_pose([move_x, move_y, move_z, 0,0,0], relative=True):
+            # 3. Move Approach (Absolute)
+            # Use relative=False
+            if not self.move_pose([t_x, t_y, appr_z, 180, 0, 0], relative=False):
                 self.get_logger().warn('Approach Failed. Skipping Item.')
                 continue
 
             # 4. Refine (Vision Detail)
-            # We are now at Approach point.
-            # We pass the OLD center to find the ID (since ID comes from cached overview).
+            # We are at Approach Point. Ask for Refined Absolute Pose.
             req_refine = CaptureVision.Request(); req_refine.mode = 1
-            req_refine.initial_pose = [cam_lat, cam_vert, cam_depth] 
+            # Pass estimated position to help find ID in cache
+            req_refine.initial_pose = [t_x, t_y, t_z] 
             res_refine = self.cli_vision.call(req_refine)
             
-            if res_refine.success and res_refine.poses_x:
-                # Refine Move
-                r_lat = res_refine.poses_x[0]
-                r_vert = res_refine.poses_y[0]
-                r_depth = res_refine.poses_z[0]
-                
-                # Apply SAME Offsets
-                r_z = r_depth - self.gripper_offset_depth
-                if r_z < 0: r_z = 0
-                
-                r_x = r_lat - self.gripper_offset_width
-                if r_x < 0: r_x = 0
-                
-                r_y = r_vert + self.gripper_offset_height
-                if r_y < 0: r_y = 0
-                
-                self.get_logger().info(f'[{tag}] (Refine) Tool: X={r_x:.1f}, Y={r_y:.1f}, Z={r_z:.1f}')
-                if not self.move_pose([r_x, r_y, r_z, 0,0,0], relative=True):
-                    self.get_logger().warn('Refine Move Failed. Skipping Item.')
-                    self.move_pose([0, 0, -300, 0, 0, 0], relative=True) # Retreat
-                    continue
-            else:
-                self.get_logger().warn('Refine Vision Failed. Skipping Item...')
-                self.move_pose([0, 0, -300, 0, 0, 0], relative=True)
-                continue
-
-            # 5. Grasp
-            if not self.gripper(open=False):
-                self.get_logger().warn('Grasp Failed. Skipping Item.')
-                self.move_pose([0, 0, -300, 0, 0, 0], relative=True)
-                continue
+            final_x, final_y, final_z = t_x, t_y, t_z # Default to overview if refine fails?
             
-            # 6. Retreat (Up/Back)
+            if res_refine.success and res_refine.poses_x:
+                # Refine Success
+                final_x = res_refine.poses_x[0]
+                final_y = res_refine.poses_y[0]
+                final_z = res_refine.poses_z[0]
+                self.get_logger().info(f'[{tag}] Refined Target: X={final_x:.1f}, Y={final_y:.1f}, Z={final_z:.1f}')
+            else:
+                self.get_logger().warn('Refine Vision Failed. Using Overview Pose.')
+            
+            # 5. Grasp Sequence
+            # Move Down to Grasp Point (Absolute)
+            # Note: final_z is the item Z.
+            
+            self.get_logger().info('Descending to Grasp...')
+            if not self.move_pose([final_x, final_y, final_z, 180, 0, 0], relative=False):
+                 self.get_logger().warn('Descent Failed. Retreating.')
+                 self.move_pose([0, 0, 100, 0, 0, 0], relative=True) # Retreat Up relative
+                 continue
+                 
+            # Close Gripper
+            if not self.gripper(open=False):
+                self.get_logger().warn('Grasp Failed.')
+            
+            # 6. Retreat (Up Absolute or Relative)
             self.get_logger().info('Retreating...')
-            # Retreat in Z (Back out)
-            self.move_pose([0, 0, -300, 0, 0, 0], relative=True)
+            # Move back to Approach Plane or Higher
+            self.move_pose([final_x, final_y, appr_z, 180, 0, 0], relative=False)
             
             # 7. Get Drop Pose
             req_drop = GetDropPose.Request(); req_drop.tag = tag
@@ -262,11 +248,12 @@ class XArmPoseNode(Node):
                 
                 self.get_logger().info(f'Placing at: {d_x}, {d_y}, {d_z}')
                 
-                # Sequence: Appr -> Down -> Open -> Up
-                ok1 = self.move_pose([d_x, d_y, d_z + 50, 180, 0, 0], relative=False)
+                # Sequence: Appr (240mm) -> Down (d_z) -> Open -> Up (240mm)
+                # User req: "upper to 240mm", drop at 93.5mm
+                ok1 = self.move_pose([d_x, d_y, 240.0, 180, 0, 0], relative=False)
                 ok2 = self.move_pose([d_x, d_y, d_z, 180, 0, 0], relative=False)
                 self.gripper(open=True)
-                ok3 = self.move_pose([d_x, d_y, d_z + 50, 180, 0, 0], relative=False)
+                ok3 = self.move_pose([d_x, d_y, 240.0, 180, 0, 0], relative=False)
                 
                 if not (ok1 and ok2 and ok3):
                      self.get_logger().error('Placement Sequence Partial Fail')

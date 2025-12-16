@@ -1,1 +1,0 @@
-/home/pandora/dev/strawberry/ros2_pro/src/mmr_orchestrator/launch/mmr_system.launch.py

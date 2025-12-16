@@ -1,8 +1,8 @@
-import time
 import math
 import requests
+import time
 
-HOST = "http://192.168.50.66"
+HOST = "http://192.168.0.8"
 
 MOVE_URL = f"{HOST}/cmd/move"
 POSE_URL = f"{HOST}/reeman/pose"
@@ -80,14 +80,17 @@ def wait_until_reached(distance_cm: float,             # 목표 이동거리(cm)
 
         time.sleep(dt)
 
-# 1) move 명령
-code, text, data = post_move(distance_cm=50, direction=1,speed=0.1)
-print(code, text)
+if __name__ == "__main__":
+    # 1) move 명령
+    #distance_cm=50
+    distance_cm=50
+    code, text, data = post_move(distance_cm=distance_cm, direction=0,speed=0.1)
+    print(code, text)
 
-# 2) 200 + status success면 체크 루프 진입
-ok_status = (code == 200) and (isinstance(data, dict) and data.get("status") == "success")
-if ok_status:
-    ok, reason, last_pose = wait_until_reached(distance_cm=50)
-    print("DONE:", ok, reason, "LAST:", last_pose)
-else:
-    print("Move command not accepted:", data)
+    # 2) 200 + status success면 체크 루프 진입
+    ok_status = (code == 200) and (isinstance(data, dict) and data.get("status") == "success")
+    if ok_status:
+        ok, reason, last_pose = wait_until_reached(distance_cm=distance_cm, eps_cm=5.0)
+        print("DONE:", ok, reason, "LAST:", last_pose)
+    else:
+        print("Move command not accepted:", data)
